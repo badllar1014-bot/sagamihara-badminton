@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>相模原バドミントン協会</title>
+  <meta name="description" content="相模原バドミントン協会の大会情報・お知らせ・結果（PDF）を掲載しています。" />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#e8ecff;
+      --muted:#a9b2d6;
+      --line:rgba(255,255,255,.12);
+      --accent:#7aa2ff;
+      --accent2:#66e3c4;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(122,162,255,.35), transparent 60%),
+                  radial-gradient(900px 500px at 100% 0%, rgba(102,227,196,.22), transparent 55%),
+                  var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{max-width:1040px;margin:0 auto;padding:24px}
+    header{
+      display:flex;gap:16px;align-items:center;justify-content:space-between;
+      padding:18px 0 6px;
+    }
+    .brand{
+      display:flex;gap:12px;align-items:center;text-decoration:none;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      flex:0 0 auto;
+    }
+    .brand h1{font-size:18px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+    nav{
+      display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;
+    }
+    nav a{
+      text-decoration:none;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    nav a:hover{color:var(--text);border-color:rgba(255,255,255,.22)}
+    .hero{
+      margin-top:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:18px;
+      padding:18px;
+      display:grid;
+      gap:14px;
+    }
+    .hero h2{margin:0;font-size:18px}
+    .hero .sub{margin:0;color:var(--muted);font-size:13px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      width:fit-content;
+      background: rgba(255,255,255,.02);
+    }
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      nav{justify-content:flex-start}
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:18px;
+      padding:16px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:15px;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:10px;
+    }
+    .hint{color:var(--muted);font-size:12px;margin:0 0 12px}
+    .list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .item{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background: rgba(0,0,0,.12);
+      display:grid;
+      gap:6px;
+    }
+    .meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .date{
+      font-size:12px;color:var(--muted);
+      border:1px solid var(--line);
+      padding:2px 8px;border-radius:999px;
+      background: rgba(255,255,255,.02);
+    }
+    .tag{
+      font-size:12px;color:rgba(255,255,255,.85);
+      border:1px solid rgba(122,162,255,.45);
+      padding:2px 8px;border-radius:999px;
+      background: rgba(122,162,255,.10);
+    }
+    .title{
+      text-decoration:none;
+      font-weight:600;
+    }
+    .title:hover{text-decoration:underline}
+    .desc{margin:0;color:var(--muted);font-size:13px}
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      font-size:13px;
+      color:var(--text);
+    }
+    .btn.primary{
+      border-color: rgba(122,162,255,.55);
+      background: rgba(122,162,255,.18);
+    }
+    .btn:hover{border-color:rgba(255,255,255,.22)}
+    footer{
+      margin:18px 0 8px;
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .small{font-size:12px;color:var(--muted)}
+    .dl{margin:0;display:grid;gap:6px}
+    .dl a{color:var(--text);text-decoration:none}
+    .dl a:hover{text-decoration:underline}
+    .sep{height:1px;background:var(--line);margin:14px 0}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="./">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>相模原バドミントン協会</h1>
+          <p>大会情報・お知らせ・結果</p>
+        </div>
+      </a>
+      <nav>
+        <a href="#news">お知らせ</a>
+        <a href="#tournaments">大会</a>
+        <a href="#results">結果</a>
+        <a href="#contact">問い合わせ</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <span class="pill">📌 更新しやすい：PDFを <code>/pdf/</code> に置いてリンクを差し替えるだけ</span>
+      <div>
+        <h2>最新情報</h2>
+        <p class="sub">直近のお知らせ・大会要項・結果をまとめて掲載します。</p>
+      </div>
+      <div class="btnrow">
+        <!-- ★ここを最新PDFに差し替える（例：pdf/2026_spring_open.pdf） -->
+        <a class="btn primary" href="pdf/latest.pdf">最新の大会要項（PDF）</a>
+        <a class="btn" href="#news">お知らせを見る</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <!-- ======================
+           お知らせ（ここを更新）
+           ====================== -->
+      <section id="news" class="card">
+        <h3>
+          お知らせ
+          <span class="small">更新：2026-02-10</span>
+        </h3>
+        <p class="hint">※ 日付・タイトル・説明・リンク（PDF/外部URL）を差し替えて使ってください。</p>
+
+        <ul class="list">
+          <!-- 1件目 -->
+          <li class="item">
+            <div class="meta">
+              <span class="date">2026-02-10</span>
+              <span class="tag">重要</span>
+            </div>
+            <a class="title" href="pdf/2026_notice_important.pdf">〇〇大会 参加申込の注意事項（PDF）</a>
+            <p class="desc">申込期限・参加費・会場注意事項を掲載しました。</p>
+          </li>
+
+          <!-- 2件目 -->
+          <li class="item">
+            <div class="meta">
+              <span class="date">2026-01-28</span>
+              <span class="tag">お知らせ</span>
+            </div>
+            <a class="title" href="pdf/2026_schedule.pdf">2026年度 年間予定（PDF）</a>
+            <p class="desc">大会日程（予定）を更新しました。</p>
+          </li>
+
+          <!-- 3件目（外部リンク例） -->
+          <li class="item">
+            <div class="meta">
+              <span class="date">2026-01-10</span>
+              <span class="tag">募集</span>
+            </div>
+            <a class="title" href="https://example.com" target="_blank" rel="noopener">審判講習会のご案内（外部）</a>
+            <p class="desc">講習会の申込ページへ移動します。</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ======================
+           サイド（固定情報）
+           ====================== -->
+      <aside class="card" aria-label="サイド情報">
+        <h3>よく使うリンク</h3>
+        <p class="hint">必要に応じてリンクを増やしてください。</p>
+
+        <div class="dl">
+          <a href="#tournaments">📄 大会要項一覧</a>
+          <a href="#results">🏆 結果一覧</a>
+          <a href="pdf/entry_form.xlsx">📝 申込書（Excel）</a>
+          <a href="pdf/privacy.pdf">🔒 プライバシーポリシー</a>
+        </div>
+
+        <div class="sep"></div>
+
+        <h3 id="contact">問い合わせ</h3>
+        <p class="hint">メールアドレスを掲載する場合は迷惑メール対策も検討してください。</p>
+        <p class="desc">
+          例：お問い合わせはフォーム（またはメール）にてお願いいたします。<br />
+          <!-- ★実運用ではフォームURLに置き換え推奨 -->
+          フォーム：<a href="https://example.com/contact" target="_blank" rel="noopener">https://example.com/contact</a>
+        </p>
+
+        <div class="sep"></div>
+
+        <h3>更新方法（最短）</h3>
+        <p class="desc">
+          1) <code>pdf/</code> にPDFを追加<br />
+          2) このページのリンクを差し替え<br />
+          3) GitHubにアップ → 自動公開
+        </p>
+      </aside>
+    </div>
+
+    <!-- ======================
+         大会（要項）
+         ====================== -->
+    <section id="tournaments" class="card" style="margin-top:16px">
+      <h3>大会要項</h3>
+      <p class="hint">年ごとにフォルダを分けると引き継ぎが楽です（例：<code>pdf/2026/</code>）。</p>
+
+      <ul class="list">
+        <li class="item">
+          <div class="meta">
+            <span class="date">2026-03-20</span>
+            <span class="tag">要項</span>
+          </div>
+          <a class="title" href="pdf/2026/20260320_open.pdf">春季オープン大会 要項（PDF）</a>
+          <p class="desc">会場：〇〇体育館／申込締切：2026-03-01</p>
+        </li>
+
+        <li class="item">
+          <div class="meta">
+            <span class="date">2026-05-10</span>
+            <span class="tag">要項</span>
+          </div>
+          <a class="title" href="pdf/2026/20260510_cup.pdf">相模原カップ 要項（PDF）</a>
+          <p class="desc">会場：〇〇アリーナ／申込締切：2026-04-20</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ======================
+         結果
+         ====================== -->
+    <section id="results" class="card" style="margin-top:16px">
+      <h3>大会結果</h3>
+      <p class="hint">結果PDFを置いてリンクするだけでOKです。</p>
+
+      <ul class="list">
+        <li class="item">
+          <div class="meta">
+            <span class="date">2026-01-15</span>
+            <span class="tag">結果</span>
+          </div>
+          <a class="title" href="pdf/2026/20260115_result.pdf">新年大会 結果（PDF）</a>
+          <p class="desc">入賞者一覧・トーナメント表</p>
+        </li>
+
+        <li class="item">
+          <div class="meta">
+            <span class="date">2025-12-08</span>
+            <span class="tag">結果</span>
+          </div>
+          <a class="title" href="pdf/2025/20251208_result.pdf">年末大会 結果（PDF）</a>
+          <p class="desc">入賞者一覧・トーナメント表</p>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> 相模原バドミントン協会</div>
+      <div class="small">最終更新日：2026-02-10</div>
+    </footer>
+  </div>
+
+  <script>
+    // 年号だけ自動で更新（任意）
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
