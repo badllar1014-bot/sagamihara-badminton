@@ -267,150 +267,156 @@
     </div>
 
     <div class="grid">
-      <section id="news" class="card">
-        <h3>
-          お知らせ
-          <span style="font-size:12px;color:var(--muted)">更新：2026-02-10</span>
-        </h3>
-        <p class="hint">※ここに「お知らせ」を追加します（試合詳細は省略OK）。</p>
+      <!-- 左カラム -->
+      <div class="left-col">
+        <section id="news" class="card">
+          <h3>
+            お知らせ
+            <span style="font-size:12px;color:var(--muted)">更新：2026-02-10</span>
+          </h3>
+          <p class="hint">※ここに「お知らせ」を追加します（試合詳細は省略OK）。</p>
 
-        <ul class="list">
-          <li class="item">
-            <div class="meta">
-              <span class="date">2026-02-10</span>
-              <span class="badge">NEW</span>
-            </div>
-            <a class="title" href="pdf/2026/notice_20260210.pdf">◯◯大会 参加に関する注意事項（PDF）</a>
-            <p class="desc">申込期限・参加費・会場注意事項を掲載しました。</p>
-          </li>
+          <ul class="list">
+            <li class="item">
+              <div class="meta">
+                <span class="date">2026-02-10</span>
+                <span class="badge">NEW</span>
+              </div>
+              <a class="title" href="pdf/2026/notice_20260210.pdf">◯◯大会 参加に関する注意事項（PDF）</a>
+              <p class="desc">申込期限・参加費・会場注意事項を掲載しました。</p>
+            </li>
 
-          <li class="item">
-            <div class="meta">
-              <span class="date">2026-01-28</span>
-              <span class="badge">NEW</span>
-            </div>
-            <a class="title" href="pdf/2026/schedule_2026.pdf">2026年度 年間予定（PDF）</a>
-            <p class="desc">年間の大会日程（予定）を更新しました。</p>
-          </li>
+            <li class="item">
+              <div class="meta">
+                <span class="date">2026-01-28</span>
+                <span class="badge">NEW</span>
+              </div>
+              <a class="title" href="pdf/2026/schedule_2026.pdf">2026年度 年間予定（PDF）</a>
+              <p class="desc">年間の大会日程（予定）を更新しました。</p>
+            </li>
 
-          <li class="item">
-            <div class="meta">
-              <span class="date">2026-01-10</span>
-              <span class="badge">案内</span>
-            </div>
-            <a class="title" href="pdf/2026/seminar_20260110.pdf">講習会のご案内（PDF）</a>
-            <p class="desc">開催概要・申込方法をご確認ください。</p>
-          </li>
-        </ul>
+            <li class="item">
+              <div class="meta">
+                <span class="date">2026-01-10</span>
+                <span class="badge">案内</span>
+              </div>
+              <a class="title" href="pdf/2026/seminar_20260110.pdf">講習会のご案内（PDF）</a>
+              <p class="desc">開催概要・申込方法をご確認ください。</p>
+            </li>
+          </ul>
 
-        <div class="sep"></div>
-        <a class="btn" href="news.html">全てのお知らせを見る</a>
-      </section>
+          <div class="sep"></div>
+          <a class="btn btn-green" href="news.html">全てのお知らせを見る</a>
+        </section>
+
+        <!-- =========================
+            大会情報（試合詳細は省略）
+            ========================= -->
+        <section id="tournament" class="card" style="margin-top:16px">
+          <h3>大会情報（更新履歴）</h3>
+          <p class="hint">※「期日」「会場」「要項」「申込」「組合せ」「結果」などのリンクだけを置く想定です。</p>
+
+          <ul class="list">
+            <li class="item">
+              <div class="meta">
+                <span class="date">更新日：2026-02-09</span>
+                <span class="badge">NEW</span>
+              </div>
+              <a class="title" href="tournament/202602.html">第◯回 ◯◯大会</a>
+              <p class="desc">
+                期日：2026-03-01 / 会場：◯◯体育館<br />
+                要項：<a href="pdf/2026/20260301_guideline.pdf">PDF</a>　
+                申込：<a href="pdf/2026/20260301_entry.pdf">PDF</a>　
+                組合せ：<a href="pdf/2026/20260301_draw.pdf">PDF</a>　
+                結果：<a href="pdf/2026/20260301_result.pdf">PDF</a>
+              </p>
+            </li>
+
+            <li class="item">
+              <div class="meta">
+                <span class="date">更新日：2026-01-20</span>
+                <span class="badge">更新</span>
+              </div>
+              <a class="title" href="tournament/202601.html">相模原カップ</a>
+              <p class="desc">
+                期日：2026-02-15 / 会場：◯◯アリーナ<br />
+                要項：<a href="pdf/2026/20260215_guideline.pdf">PDF</a>　
+                申込：<a href="pdf/2026/20260215_entry.pdf">PDF</a>　
+                組合せ：<a href="pdf/2026/20260215_draw.pdf">PDF</a>　
+                結果：<a href="pdf/2026/20260215_result.pdf">PDF</a>
+              </p>
+            </li>
+          </ul>
+
+          <div class="sep"></div>
+          <a class="btn btn-green" href="tournament.html">全ての大会情報を見る</a>
+        </section>
+      </div>
 
       <!-- =========================
            右カラム（導線まとめ）
            ========================= -->
       <aside class="card" aria-label="ショートカット">
-        <h3>ショートカット</h3>
-        <p class="hint">よく使うPDFやページへの導線をまとめます。</p>
-
+        <h3 id="contact">大会情報</h3>
         <div class="links">
-          <a href="pdf/entry_form.xlsx">📝 申込書（Excel）</a>
-          <a href="pdf/rules.pdf">📘 競技規程・注意事項（PDF）</a>
-          <a href="pdf/privacy.pdf">🔒 プライバシーポリシー（PDF）</a>
+          <a class="title" href="https://www.badminton.or.jp/">相模原オープン大会（団体戦）</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原市民バドミントン選手権大会（シングルス）</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原市民バドミントン選手権大会（ダブルス）</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原オープンレディース大会</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原オープン中学生大会（個人戦）</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原オープン中学生大会（団体戦）</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原オープンダブルス大会</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原年齢別ﾐｯｸｽ大会</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原オープン小学生大会</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原市総合選手権大会（シングルス）</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">相模原市総合選手権大会（ダブルス）</a>
+        </div>
+      
+        <div class="sep"></div>
+
+        <h3>お知らせ</h3>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">協会登録について</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton-kk.org/">主催大会以外の結果について</a>
         </div>
 
         <div class="sep"></div>
 
-        <h3 id="contact">お問い合わせ</h3>
-        <p class="hint">メール直書きは迷惑メール対策が必要なため、フォーム推奨です。</p>
-        <p class="desc">
-          お問い合わせは以下のフォーム（または担当窓口）よりお願いします。<br />
-          フォーム：<a href="https://example.com/contact" target="_blank" rel="noopener">https://example.com/contact</a>
-        </p>
-
-        <div class="sep"></div>
-
-        <h3>更新メモ</h3>
-        <p class="desc">
-          1) <code>pdf/</code> にPDFを追加<br />
-          2) このページのリンクを更新<br />
-          3) GitHubにpush → 自動公開
-        </p>
+        <h3>各協会のリンク</h3>
+        <div class="links">
+          <a class="title" href="https://www.badminton.or.jp/">日本バドミントン協会</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://www.badminton-kk.org/">神奈川県バドミントン協会</a>
+        </div>
+        <div class="links">
+          <a class="title" href="https://sagamihara-redhi-su-bado.jimdofree.com/">相模原レディース連盟</a>
+        </div>
       </aside>
     </div>
 
-    <!-- =========================
-         大会情報（試合詳細は省略）
-         ========================= -->
-    <section id="tournament" class="card" style="margin-top:16px">
-      <h3>大会情報（更新履歴）</h3>
-      <p class="hint">※「期日」「会場」「要項」「申込」「組合せ」「結果」などのリンクだけを置く想定です。</p>
-
-      <ul class="list">
-        <li class="item">
-          <div class="meta">
-            <span class="date">更新日：2026-02-09</span>
-            <span class="badge">NEW</span>
-          </div>
-          <a class="title" href="tournament/202602.html">第◯回 ◯◯大会</a>
-          <p class="desc">
-            期日：2026-03-01 / 会場：◯◯体育館<br />
-            要項：<a href="pdf/2026/20260301_guideline.pdf">PDF</a>　
-            申込：<a href="pdf/2026/20260301_entry.pdf">PDF</a>　
-            組合せ：<a href="pdf/2026/20260301_draw.pdf">PDF</a>　
-            結果：<a href="pdf/2026/20260301_result.pdf">PDF</a>
-          </p>
-        </li>
-
-        <li class="item">
-          <div class="meta">
-            <span class="date">更新日：2026-01-20</span>
-            <span class="badge">更新</span>
-          </div>
-          <a class="title" href="tournament/202601.html">相模原カップ</a>
-          <p class="desc">
-            期日：2026-02-15 / 会場：◯◯アリーナ<br />
-            要項：<a href="pdf/2026/20260215_guideline.pdf">PDF</a>　
-            申込：<a href="pdf/2026/20260215_entry.pdf">PDF</a>　
-            組合せ：<a href="pdf/2026/20260215_draw.pdf">PDF</a>　
-            結果：<a href="pdf/2026/20260215_result.pdf">PDF</a>
-          </p>
-        </li>
-      </ul>
-
-      <div class="sep"></div>
-      <a class="btn" href="tournament.html">全ての大会情報を見る</a>
-    </section>
-
-    <!-- =========================
-         結果（一覧だけ）
-         ========================= -->
-    <section id="result" class="card" style="margin-top:16px">
-      <h3>大会結果</h3>
-      <p class="hint">※結果PDFの一覧（新しい順）だけ載せる想定です。</p>
-
-      <ul class="list">
-        <li class="item">
-          <div class="meta">
-            <span class="date">2026-01-15</span>
-            <span class="badge">結果</span>
-          </div>
-          <a class="title" href="pdf/2026/20260115_result.pdf">新年大会 結果（PDF）</a>
-          <p class="desc">入賞者一覧・トーナメント表</p>
-        </li>
-
-        <li class="item">
-          <div class="meta">
-            <span class="date">2025-12-08</span>
-            <span class="badge">結果</span>
-          </div>
-          <a class="title" href="pdf/2025/20251208_result.pdf">年末大会 結果（PDF）</a>
-          <p class="desc">入賞者一覧・トーナメント表</p>
-        </li>
-      </ul>
-    </section>
-    
     <!-- 上部グレー帯：ページ上部へ -->
     <div class="topbar" aria-label="ページ操作">
       <div class="topbar-inner">
@@ -468,7 +474,7 @@
         <aside class="mega-info" aria-label="協会情報">
           <h2>相模原市バドミントン協会</h2>
           <p>
-            石原 清行
+            問合せ先：石原 清行
           </p>
           <p>
             Tel. 090-1541-5590<br>

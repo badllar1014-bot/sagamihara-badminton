@@ -11,6 +11,7 @@
   --text: #1f2937;
   --muted: #6b7280;
   --line: #e5e7eb;
+  --green: #0b7a3a;      /* 好きな緑に調整OK */
 
   /* “協会サイトっぽい青” */
   --accent: #0b63ce;
@@ -180,7 +181,7 @@ header nav a:hover{
 .grid{
   margin-top: 16px;
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: 1.5fr .60fr;
   gap: 16px;
 }
 
@@ -211,8 +212,19 @@ header nav a:hover{
 
   /* 見出し線（区切り感） */
   padding-left: 10px;
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--green);
 }
+
+/* 右カラム（各協会のリンク等）だけ文字を小さく＆1行固定 */
+.grid > aside.card .links a{
+  font-size: 12px;          /* ★小さく */
+  line-height: 1.2;
+  padding: 8px 10px;        /* 右カラムを詰める */
+  white-space: nowrap;      /* ★1行 */
+  overflow: hidden;
+  text-overflow: ellipsis;  /* ★入りきらない時は … */
+}
+
 
 .hint{
   margin: 0 0 12px;
@@ -294,6 +306,12 @@ header nav a:hover{
   color: var(--muted);
 }
 
+/* 左カラム内でカードを縦積みしたい */
+.left-col{
+  display: grid;
+  gap: 16px;
+}
+
 /* =========================
    Buttons
    ========================= */
@@ -348,6 +366,22 @@ header nav a:hover{
   background: #fff;
   border-radius: 10px;
   padding: 10px 12px;
+}
+
+/* ショートカットを“普通のリンク”表示にしたい場合 */
+aside .links a{
+  border: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--accent);
+  display: inline;
+}
+
+aside .links a:hover{
+  text-decoration: underline;
+  box-shadow: none;
 }
 
 .links a:hover{
@@ -421,6 +455,32 @@ html{ scroll-behavior: smooth; }
 .topbar-btn:active{
   transform: translateY(1px);
   box-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+
+/* 北海道サイト風：緑のボタン */
+.btn.btn-green{
+  background: #0b7a3a;
+  border: 1px solid #0b7a3a;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 4px;      /* 角を少しだけ */
+  padding: 12px 16px;      /* 縦を少し厚め */
+  box-shadow: none;
+}
+
+/* 左に ▶ を付ける */
+.btn.btn-green::before{
+  content: "▶ ";
+  margin-right: 2px;
+  opacity: .95;
+}
+
+/* hover */
+.btn.btn-green:hover{
+  background: #075f2d;
+  border-color: #075f2d;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Optional: anchor offset */
