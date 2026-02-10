@@ -103,8 +103,16 @@ header{
 
 .brand h1{
   margin: 0;
-  font-size: 18px;
-  letter-spacing: .02em;
+  font-size: 26px;              /* ★大きく */
+  font-weight: 900;             /* ★太く */
+  letter-spacing: .04em;
+  color: #0b7a3a;                     /* ★緑色に */
+  line-height: 1.15;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8), 0 2px 10px rgba(0,0,0,.08); /* ★くっきり */
+}
+
+@media (max-width: 520px){
+  .brand h1{ font-size: 22px; }
 }
 
 .brand p{
@@ -365,6 +373,54 @@ footer{
   flex-wrap: wrap;
   padding-top: 12px;
   border-top: 1px solid var(--line);
+}
+
+/* スムーズスクロール（任意） */
+html{ scroll-behavior: smooth; }
+
+/* グレー帯：縦幅を縮小 */
+.topbar{
+  background: #e5e7eb;
+  border-top: 1px solid #d1d5db;
+  border-bottom: 1px solid #d1d5db;
+  margin-top: 16px;  /* ★協会案内とグレー帯の間の空行 */
+}
+
+.topbar-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2px 16px;              /* ★10px→6px にして帯を薄く */
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 「ページ上部へ」ボタン：縦幅を縮小 */
+.topbar-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 4px 12px;              /* ★8px→6px */
+  line-height: 1.1;               /* ★縦を詰める */
+  font-size: 14px;                /* ★少し小さく（必要なら13pxでも） */
+
+  background: linear-gradient(#f9fafb, #e5e7eb);
+  color: #0b7a3a;
+  text-decoration: none;
+  font-weight: 800;
+
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.15);
+}
+
+.topbar-btn:hover{
+  background: linear-gradient(#ffffff, #e5e7eb);
+}
+
+.topbar-btn:active{
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
 
 /* Optional: anchor offset */

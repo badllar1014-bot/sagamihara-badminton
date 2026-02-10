@@ -84,11 +84,156 @@
       .topnav nav a:nth-child(odd){ border-left: var(--nav-line) solid #ffffff; }
       .topnav nav a:nth-child(even){ border-left: 0; }
     }
+
+    /* ===== Mega Menu (Hokkaido-like compact) ===== */
+    .mega{
+      margin: 0 0 0; /* 余白は必要なら調整 */
+      background: radial-gradient(circle at 50% 28%, #2c8b3e 0%, #0d5c2a 58%, #094a22 100%);
+      border: 1px solid rgba(255,255,255,.28);
+      box-shadow: 0 10px 24px rgba(0,0,0,.20);
+      color: #fff;
+
+      /* ★横スクロールさせない（保険） */
+      overflow-x: hidden;
+    }
+
+    .mega-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 18px 18px;
+      display: grid;
+      grid-template-columns: 90px 180px 1fr 190px; /* 左：メニュー / 中：お知らせ / 大：大会情報 / 右：協会情報 */
+      gap: 14px;
+      align-items: start;
+    }
+
+    /* ★まれにグリッドが縮まらないのを防ぐ（横はみ出し対策） */
+    .mega-col{ min-width: 0; }
+    .mega-info{ min-width: 0; }
+
+    /* 見出し：小さめ・線細め（北海道寄せ） */
+    .mega-col h2,
+    .mega-info h2{
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      color: #fff;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,.35);
+    }
+
+    /* リスト全体：文字小さめ・行間詰める */
+    .mega-col ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+      font-size: 13px;     /* ★小さく */
+      line-height: 1.35;   /* ★詰める */
+    }
+
+    /* 大会情報：3列で“縦に伸びない” */
+    .mega-col ul.three{
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 18px;
+      row-gap: 8px;
+    }
+
+    /* 大会情報のリンク文字だけ小さく */
+    .mega-col ul.three a{
+      font-size: 11px;
+      line-height: 1.3;
+    }
+
+    /* ★リンク：横に伸ばさず、必要なら折り返して縦に伸ばす（A案） */
+    .mega a{
+      color: #fff;
+      text-decoration: none;
+      font-weight: 650;
+
+      display: block;           /* ★カラム幅いっぱいを使って折り返す */
+      max-width: 100%;
+      white-space: normal;      /* ★nowrap禁止 → 折り返し許可 */
+      overflow: visible;
+      text-overflow: clip;
+
+      overflow-wrap: anywhere;  /* ★長い文字列/括弧でも折る */
+      word-break: break-word;   /* ★保険 */
+      line-height: 1.35;
+    }
+
+    .mega a::before{
+      content: "▶ ";
+      opacity: .85;
+    }
+
+    .mega a:hover{
+      text-decoration: underline;
+    }
+
+    /* 例外：どうしても2行に揃えたい時だけ付けるクラス（A案では基本不要） */
+    .mega a.two-line{
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;         /* ★2行で止める */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* 右の協会情報ボックス：北海道っぽく薄枠・余白少なめ */
+    .mega-info{
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(0,0,0,.08);
+      padding: 14px 14px 12px;
+    }
+
+    .mega-info p{
+      margin: 10px 0 0;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .mega-info .links{
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .mega-info .links a{
+      text-decoration: underline;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* Responsive：崩れ方も北海道寄せ */
+    @media (max-width: 1060px){
+      .mega-inner{
+        grid-template-columns: 210px 1fr; /* 左2列に */
+      }
+      .mega-info{
+        grid-column: 1 / -1;
+      }
+      .mega-col ul.three{
+        grid-template-columns: 1fr 1fr; /* 2列に */
+      }
+    }
+
+    @media (max-width: 620px){
+      .mega-inner{
+        grid-template-columns: 1fr;
+      }
+      .mega-col ul.three{
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <a id="top"></a><div class="container">
     <!-- =========================
          ヘッダー（ロゴ・協会名は残す）
          ・協会名押下でホームに戻る（index.html）
@@ -112,10 +257,10 @@
     <div class="topnav" role="navigation" aria-label="グローバルナビゲーション">
       <div class="nav-inner">
         <nav aria-label="グローバルナビ">
-          <a href="#news">お知らせ</a>
+          <a href="#news">協会案内</a>
           <a href="#tournament">大会情報</a>
-          <a href="#result">栄光の記録</a>
-          <a href="#about">協会案内</a>
+          <a href="#result">お知らせ</a>
+          <a href="#about">栄光の記録</a>
           <a href="#contact">お問い合わせ</a>
         </nav>
       </div>
@@ -265,17 +410,73 @@
         </li>
       </ul>
     </section>
+    
+    <!-- 上部グレー帯：ページ上部へ -->
+    <div class="topbar" aria-label="ページ操作">
+      <div class="topbar-inner">
+        <a class="topbar-btn" href="#top">↑ ページの上部へ</a>
+      </div>
+    </div>
 
     <!-- =========================
-         協会案内（簡易）
-         ========================= -->
-    <section id="about" class="card" style="margin-top:16px">
-      <h3>協会案内</h3>
-      <p class="desc">
-        相模原市バドミントン協会の概要、役員、規程などの情報を掲載します。<br />
-        詳細ページがある場合はリンクしてください：
-        <a href="about.html">協会案内ページへ</a>
-      </p>
+        Header Mega Menu（北海道サイト風）
+        ========================= -->
+    <section class="mega" aria-label="ヘッダーメニュー">
+      <div class="mega-inner">
+
+        <!-- 1) メニュー -->
+        <div class="mega-col">
+          <h2>メニュー</h2>
+          <ul>
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="#about">協会案内</a></li>
+            <li><a href="#tournament">大会情報</a></li>
+            <li><a href="#news">お知らせ</a></li>
+            <li><a href="#result">結果</a></li>
+            <li><a href="link.html">リンク</a></li>
+          </ul>
+        </div>
+
+        <!-- 2) お知らせ -->
+        <div class="mega-col">
+          <h2>お知らせ</h2>
+          <ul>
+            <li><a href="news.html">協会登録について</a></li>
+            <li><a href="news.html">主催大会以外の結果について</a></li>
+          </ul>
+        </div>
+
+        <!-- 3) 大会情報 -->
+        <div class="mega-col">
+          <h2>大会情報</h2>
+          <ul class="three">
+            <li><a href="tournament.html">相模原オープン大会（団体戦）</a></li>
+            <li><a href="tournament.html">相模原市民バドミントン選手権大会（シングルス）</a></li>
+            <li><a href="tournament.html">相模原市民バドミントン選手権大会（ダブルス）</a></li>
+            <li><a href="tournament.html">相模原オープンレディース大会</a></li>
+            <li><a href="tournament.html">相模原オープン中学生大会（個人戦）</a></li>
+            <li><a href="tournament.html">相模原オープン中学生大会（団体戦）</a></li>
+            <li><a href="tournament.html">相模原オープンダブルス大会</a></li>
+            <li><a href="tournament.html">相模原年齢別ﾐｯｸｽ大会</a></li>
+            <li><a href="tournament.html">相模原オープン小学生大会</a></li>
+            <li><a href="tournament.html">相模原市総合選手権大会（シングルス）</a></li>
+            <li><a href="tournament.html">相模原市総合選手権大会（ダブルス）</a></li>
+          </ul>
+        </div>
+
+        <!-- 4) 協会情報（右の枠） -->
+        <aside class="mega-info" aria-label="協会情報">
+          <h2>相模原市バドミントン協会</h2>
+          <p>
+            石原 清行
+          </p>
+          <p>
+            Tel. 090-1541-5590<br>
+            （電話は18～22時にお願いします）
+          </p>
+        </aside>
+
+      </div>
     </section>
 
     <footer>
