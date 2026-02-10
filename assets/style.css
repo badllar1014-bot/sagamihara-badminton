@@ -1,299 +1,371 @@
-/* =========================
-   相模原バドミントン協会 / style.css
-   ========================= */
+/* =========================================================
+   sagamihara-badminton / assets/style.css
+   - White base + blue accent (association site style)
+   - Works with your index.html
+   - FIX(B): nav styles are scoped to header nav only (avoid topnav conflicts)
+   ========================================================= */
 
 :root{
-  --bg:#0b1020;
-  --card:#121a33;
-  --text:#e8ecff;
-  --muted:#a9b2d6;
-  --line:rgba(255,255,255,.12);
-  --accent:#7aa2ff;
-  --accent2:#66e3c4;
+  --bg: #f6f8fb;
+  --panel: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+
+  /* “協会サイトっぽい青” */
+  --accent: #0b63ce;
+  --accent-dark: #084ea3;
+  --accent-soft: #e8f1ff;
+
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
 }
 
-*{ box-sizing:border-box; }
-
-html, body{ height:100%; }
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
 
 body{
-  margin:0;
-  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 20% -10%, rgba(122,162,255,.35), transparent 60%),
-    radial-gradient(900px 500px at 100% 0%, rgba(102,227,196,.22), transparent 55%),
-    var(--bg);
-  line-height:1.6;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP",
+               "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
 }
 
-a{ color:inherit; }
+a{ color: var(--accent); }
+a:hover{ color: var(--accent-dark); }
 
 code{
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
   font-size: .95em;
   padding: .08em .35em;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255,255,255,.03);
+  background: #fff;
 }
 
 /* Layout */
 .container{
-  max-width:1040px;
-  margin:0 auto;
-  padding:24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 16px 28px;
 }
 
-/* Header */
+/* =========================
+   Header
+   ========================= */
 header{
-  display:flex;
-  gap:16px;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0 14px;
 }
 
+/* “協会ロゴ＋名称” */
 .brand{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  text-decoration:none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
 }
 
-.logo{
-  width:44px;
-  height:44px;
-  border-radius:12px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  flex:0 0 auto;
+.brand .logo-wrap{
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.brand img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* ロゴ画像がない時の見た目（今回は img あるので基本不要） */
+.brand .logo-fallback{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent), #4aa3ff);
 }
 
 .brand h1{
-  font-size:18px;
-  margin:0;
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: .02em;
 }
 
 .brand p{
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--muted);
 }
 
-nav{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
+/* =========================================================
+   FIX(B案)
+   旧: nav / nav a をグローバル指定していたため topnav と競合
+   新: header nav のみに限定（あなたのindex.htmlでは header内にnavが無いので影響なし）
+   ========================================================= */
+header nav{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
-nav a{
-  text-decoration:none;
-  padding:8px 10px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  font-size:13px;
-  color:var(--muted);
-  background: rgba(255,255,255,.03);
+header nav a{
+  text-decoration: none;
+  font-size: 13px;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid rgba(255,255,255,.35);
+  padding: 8px 10px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(11, 99, 206, 0.18);
 }
 
-nav a:hover{
-  color:var(--text);
-  border-color:rgba(255,255,255,.22);
+header nav a:hover{
+  background: var(--accent-dark);
+  color: #fff;
 }
 
-/* Hero */
+/* =========================
+   Hero (top guidance)
+   ========================= */
 .hero{
-  margin-top:14px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  border-radius:18px;
-  padding:18px;
-  display:grid;
-  gap:14px;
+  margin-top: 6px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+  display: grid;
+  gap: 12px;
 }
 
 .hero h2{
-  margin:0;
-  font-size:18px;
+  margin: 0;
+  font-size: 18px;
 }
 
 .hero .sub{
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
 }
 
-.pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  color:var(--muted);
-  font-size:12px;
-  width:fit-content;
-  background: rgba(255,255,255,.02);
-}
-
-/* Grid */
+/* =========================
+   Grid
+   ========================= */
 .grid{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap:16px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 16px;
 }
 
-@media (max-width: 900px){
-  .grid{ grid-template-columns:1fr; }
-  header{ flex-direction:column; align-items:flex-start; }
-  nav{ justify-content:flex-start; }
+@media (max-width: 920px){
+  header{ flex-direction: column; align-items: flex-start; }
+  header nav{ justify-content: flex-start; }
+  .grid{ grid-template-columns: 1fr; }
 }
 
-/* Cards */
+/* =========================
+   Cards
+   ========================= */
 .card{
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  border-radius:18px;
-  padding:16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
 }
 
 .card h3{
-  margin:0 0 10px;
-  font-size:15px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
+  margin: 0 0 10px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  /* 見出し線（区切り感） */
+  padding-left: 10px;
+  border-left: 4px solid var(--accent);
 }
 
 .hint{
-  color:var(--muted);
-  font-size:12px;
-  margin:0 0 12px;
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: var(--muted);
 }
 
-/* Lists */
+/* Divider */
+.sep{
+  height: 1px;
+  background: var(--line);
+  margin: 14px 0;
+}
+
+/* =========================
+   Lists (news / tournament / result)
+   ========================= */
 .list{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
 }
 
 .item{
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:12px;
-  background: rgba(0,0,0,.12);
-  display:grid;
-  gap:6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+}
+
+.item:hover{
+  border-color: #d6def0;
+  box-shadow: 0 10px 28px rgba(17, 24, 39, 0.10);
+  transition: box-shadow .18s ease, border-color .18s ease;
 }
 
 .meta{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  align-items:center;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 6px;
 }
 
 .date{
-  font-size:12px;
-  color:var(--muted);
-  border:1px solid var(--line);
-  padding:2px 8px;
-  border-radius:999px;
-  background: rgba(255,255,255,.02);
+  font-size: 12px;
+  color: var(--muted);
+  background: #f3f4f6;
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 999px;
 }
 
-.tag{
-  font-size:12px;
-  color:rgba(255,255,255,.85);
-  border:1px solid rgba(122,162,255,.45);
-  padding:2px 8px;
-  border-radius:999px;
-  background: rgba(122,162,255,.10);
+.badge{
+  font-size: 12px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  border: 1px solid #cfe2ff;
+  padding: 2px 8px;
+  border-radius: 999px;
 }
 
 .title{
-  text-decoration:none;
-  font-weight:600;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--accent);
 }
 
 .title:hover{
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .desc{
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--muted);
 }
 
-/* Buttons */
-.btnrow{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:10px;
+/* =========================
+   Buttons
+   ========================= */
+.cta{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn{
-  text-decoration:none;
-  padding:10px 12px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  font-size:13px;
-  color:var(--text);
-}
-
-.btn.primary{
-  border-color: rgba(122,162,255,.55);
-  background: rgba(122,162,255,.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .btn:hover{
-  border-color:rgba(255,255,255,.22);
+  border-color: #cfe2ff;
+  box-shadow: 0 10px 24px rgba(11, 99, 206, 0.12);
 }
 
-/* Sidebar links */
-.dl{
-  margin:0;
-  display:grid;
-  gap:6px;
+.btn.primary{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
 }
 
-.dl a{
-  color:var(--text);
-  text-decoration:none;
+.btn.primary:hover{
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
 }
 
-.dl a:hover{
-  text-decoration:underline;
+/* =========================
+   Sidebar links
+   ========================= */
+.links{
+  display: grid;
+  gap: 8px;
 }
 
-.sep{
-  height:1px;
-  background:var(--line);
-  margin:14px 0;
+.links a{
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.links a:hover{
+  border-color: #cfe2ff;
+  box-shadow: 0 10px 22px rgba(17, 24, 39, 0.08);
 }
 
 .small{
-  font-size:12px;
-  color:var(--muted);
+  font-size: 12px;
+  color: var(--muted);
 }
 
-/* Footer */
+/* =========================
+   Footer
+   ========================= */
 footer{
-  margin:18px 0 8px;
-  color:var(--muted);
-  font-size:12px;
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
+  margin: 18px 0 6px;
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
 }
+
+/* Optional: anchor offset */
+section[id]{ scroll-margin-top: 14px; }
