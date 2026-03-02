@@ -1,0 +1,56 @@
+{
+  "schema": "sagamihara-badminton/results-v1",
+  "generated_at": "2026-02-24T00:00:00+09:00",
+  "categories": [
+    {
+      "key": "open_team",
+      "label": "相模原オープン大会（団体戦）",
+      "years": [
+        {
+          "year": 2026,
+          "entries": [
+            {
+              "id": "open_team-2026-001",
+              "updated": "2026-02-20",
+              "title": "（例）相模原オープン大会（団体戦）2026",
+              "url": "results/open_team/2026/20260220.html",
+              "lines": [
+                { "label": "期　日：", "value": "令和8年3月10日（土）・11日（日）" },
+                { "label": "主　管：", "value": "相模原市バドミントン協会" },
+                { "label": "会　場：", "value": "（例）相模原市総合体育館" }
+              ],
+              "docs": [
+                { "type": "pdf", "label": "要項", "url": "pdf/2026/open_team_guideline.pdf" },
+                { "type": "pdf", "label": "結果", "url": "pdf/2026/open_team_result.pdf" }
+              ]
+            },
+            {
+              "id": "open_team-2026-002",
+              "updated": "2026-01-20",
+              "title": "（例）相模原オープン大会（団体戦）2025",
+              "url": "results/open_team/2025/20250120.html",
+              "lines": [
+                { "label": "期　日：", "value": "令和8年2月1日（日）" },
+                { "label": "会　場：", "value": "（例）○○体育館" }
+              ],
+              "docs": [
+                { "type": "pdf", "label": "結果", "url": "pdf/2025/open_team_result.pdf" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    { "key": "shimin_single", "label": "相模原市民バドミントン選手権大会（シングルス）", "years": [] },
+    { "key": "shimin_double", "label": "相模原市民バドミントン選手権大会（ダブルス）", "years": [] },
+    { "key": "open_ladies", "label": "相模原オープンレディース大会", "years": [] },
+    { "key": "open_jhs_ind", "label": "相模原オープン中学生大会（個人戦）", "years": [] },
+    { "key": "open_jhs_team", "label": "相模原オープン中学生大会（団体戦）", "years": [] },
+    { "key": "open_double", "label": "相模原オープンダブルス大会", "years": [] },
+    { "key": "age_mix", "label": "相模原年齢別ﾐｯｸｽ大会", "years": [] },
+    { "key": "open_elem", "label": "相模原オープン小学生大会", "years": [] },
+    { "key": "sogo_single", "label": "相模原市総合選手権大会（シングルス）", "years": [] },
+    { "key": "sogo_double", "label": "相模原市総合選手権大会（ダブルス）", "years": [] }
+  ]
+}

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>大会結果｜相模原市バドミントン協会</title>
+  <meta name="description" content="年度別に大会結果を掲載します。" />
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style-results.css">
+</head>
+
+<body>
+  <a id="top"></a>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="相模原市バドミントン協会 トップへ">
+        <div class="logo-wrap" aria-hidden="true">
+          <img src="parts/logo.png" alt="相模原市バドミントン協会 ロゴ">
+        </div>
+        <div class="brand-text">
+          <h1>相模原市バドミントン協会</h1>
+        </div>
+      </a>
+    </header>
+
+    <!-- Global nav -->
+    <div class="topnav" role="navigation" aria-label="グローバルナビゲーション">
+      <div class="nav-inner">
+        <nav aria-label="グローバルナビ">
+          <a href="index-about.html">協会案内</a>
+          <a href="index-taikai.html" aria-current="page">大会情報</a>
+          <a href="index-news.html">お知らせ</a>
+          <a href="index-records.html">栄光の記録</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="パンくず">
+      <a href="index.html">HOME</a>
+      <a href="index-taikai.html">大会情報</a>
+      <span id="crumbTitle" aria-current="page">大会結果</span>
+    </nav>
+
+    <!-- Page -->
+    <div class="page">
+      <div class="page-inner">
+
+        <!-- Left -->
+        <main class="content" aria-label="大会結果（一覧）">
+          <h2 id="pageTitle" class="page-title">大会結果</h2>
+          <div class="section-bar"></div>
+
+          <!-- ここにJSが大会ブロックを生成 -->
+          <div id="resultsList"></div>
+
+          <div style="margin-top:16px;">
+            <a class="doc" href="index-taikai.html">← 大会情報 へ戻る</a>
+          </div>
+        </main>
+
+        <!-- Right（共通） -->
+        <aside class="card right-tab" aria-label="ショートカット">
+          <h3>大会情報</h3>
+          <div class="links"><a class="title" href="index-results.html?key=open_team">相模原オープン大会（団体戦）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=shimin_single">相模原市民バドミントン選手権大会（シングルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=shimin_double">相模原市民バドミントン選手権大会（ダブルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=open_double">相模原オープンダブルス大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=age_mix">相模原年齢別ﾐｯｸｽ大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=open_elem">相模原オープン小学生大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=sogo_single">相模原市総合選手権大会（シングルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=sogo_double">相模原市総合選手権大会（ダブルス）</a></div>
+
+          <div class="sep"></div>
+
+          <h3>お知らせ</h3>
+          <div class="links"><a class="title" href="index-regist.html">協会登録について</a></div>
+          <div class="links"><a class="title" href="news.html">主催大会以外の結果について</a></div>
+
+          <div class="sep"></div>
+
+          <h3>各協会のリンク</h3>
+          <div class="links"><a class="title" href="https://www.badminton.or.jp/">日本バドミントン協会</a></div>
+          <div class="links"><a class="title" href="https://www.badminton-kk.org/">神奈川県バドミントン協会</a></div>
+          <div class="links"><a class="title" href="https://sagamihara-redhi-su-bado.jimdofree.com/">相模原レディース連盟</a></div>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- topbar -->
+    <div class="topbar" aria-label="ページ操作">
+      <div class="topbar-inner">
+        <a class="topbar-btn" href="#top">↑ ページの上部へ</a>
+      </div>
+    </div>
+
+    <!-- =========================
+        Header Mega Menu（北海道サイト風）
+        ========================= -->
+    <section class="mega" aria-label="ヘッダーメニュー">
+      <div class="mega-inner">
+
+        <!-- 1) メニュー -->
+        <div class="mega-col">
+          <h2>メニュー</h2>
+          <ul>
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="index-about.html">協会案内</a></li>
+            <li><a href="index-taikai.html">大会情報</a></li>
+            <li><a href="index-news.html">お知らせ</a></li>
+            <li><a href="index-records.html">結果</a></li>
+          </ul>
+        </div>
+
+        <!-- 2) お知らせ -->
+        <div class="mega-col">
+          <h2>お知らせ</h2>
+          <ul>
+            <li><a href="index-regist.html">協会登録について</a></li>
+            <li><a href="news.html">主催大会以外の結果について</a></li>
+          </ul>
+        </div>
+
+        <!-- 3) 大会情報 -->
+        <div class="mega-col">
+          <h2>大会情報</h2>
+          <ul class="three">
+            <li><a href="index-results.html?key=open_team">相模原オープン大会（団体戦）</a></li>
+            <li><a href="index-results.html?key=shimin_single">相模原市民バドミントン選手権大会（シングルス）</a></li>
+            <li><a href="index-results.html?key=shimin_double">相模原市民バドミントン選手権大会（ダブルス）</a></li>
+            <li><a href="index-results.html?key=open_double">相模原オープンダブルス大会</a></li>
+            <li><a href="index-results.html?key=age_mix">相模原年齢別ﾐｯｸｽ大会</a></li>
+            <li><a href="index-results.html?key=open_elem">相模原オープン小学生大会</a></li>
+            <li><a href="index-results.html?key=sogo_single">相模原市総合選手権大会（シングルス）</a></li>
+            <li><a href="index-results.html?key=sogo_double">相模原市総合選手権大会（ダブルス）</a></li>
+          </ul>
+        </div>
+
+        <!-- 4) 協会情報（右の枠） -->
+        <aside class="mega-info" aria-label="協会情報">
+          <h2>相模原市バドミントン協会</h2>
+          <p>
+            問合せ先：石原 清行
+          </p>
+          <p>
+            Tel. 090-1541-5590<br>
+            （電話は18～22時にお願いします）
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <div>© <span id="y"></span> 相模原市バドミントン協会</div>
+      <div>最終更新日：2026-02-10</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="assets/results-render.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{
+  "years": [
+    {
+      "id": "y2026",
+      "label": "2026年度",
+      "entries": [
+        {
+          "id": "y2026-001",
+          "title": "第◯回 ◯◯大会",
+          "url": "tournament/20260301.html",
+          "updated": "2026-02-20",
+          "rows": [
+            { "key": "期日", "value": "2026年3月1日（日）" },
+            { "key": "会場", "value": "◯◯体育館" }
+          ],
+          "files": [
+            { "label": "要項（PDF）", "url": "pdf/2026/20260301_guideline.pdf" },
+            { "label": "参加申込（PDF）", "url": "pdf/2026/20260301_entry.pdf" },
+            { "label": "組合せ（PDF）", "url": "pdf/2026/20260301_draw.pdf" },
+            { "label": "タイムテーブル（PDF）", "url": "pdf/2026/20260301_timetable.pdf" },
+            { "label": "結果（PDF）", "url": "pdf/2026/20260301_result.pdf" }
+          ]
+        },
+        {
+          "id": "y2026-002",
+          "title": "相模原カップ",
+          "url": "tournament/20260215.html",
+          "updated": "2026-01-30",
+          "rows": [
+            { "key": "期日", "value": "2026年2月15日（日）" },
+            { "key": "会場", "value": "◯◯アリーナ" }
+          ],
+          "files": [
+            { "label": "要項（PDF）", "url": "pdf/2026/20260215_guideline.pdf" },
+            { "label": "参加申込（PDF）", "url": "pdf/2026/20260215_entry.pdf" },
+            { "label": "組合せ（PDF）", "url": "pdf/2026/20260215_draw.pdf" },
+            { "label": "結果（PDF）", "url": "pdf/2026/20260215_result.pdf" }
+          ]
+        },
+        {
+          "id": "y2026-003",
+          "title": "相模原カップ",
+          "url": "tournament/20260215.html",
+          "updated": "2026-01-20",
+          "rows": [
+            { "key": "期日", "value": "2026年2月15日（日）" },
+            { "key": "会場", "value": "◯◯アリーナ" }
+          ],
+          "files": [
+            { "label": "要項（PDF）", "url": "pdf/2026/20260215_guideline.pdf" },
+            { "label": "参加申込（PDF）", "url": "pdf/2026/20260215_entry.pdf" },
+            { "label": "組合せ（PDF）", "url": "pdf/2026/20260215_draw.pdf" },
+            { "label": "結果（PDF）", "url": "pdf/2026/20260215_result.pdf" }
+          ]
+        },
+        {
+          "id": "y2026-004",
+          "title": "相模原カップ",
+          "url": "tournament/20260215.html",
+          "updated": "2026-01-10",
+          "rows": [
+            { "key": "期日", "value": "2026年2月15日（日）" },
+            { "key": "会場", "value": "◯◯アリーナ" }
+          ],
+          "files": [
+            { "label": "要項（PDF）", "url": "pdf/2026/20260215_guideline.pdf" },
+            { "label": "参加申込（PDF）", "url": "pdf/2026/20260215_entry.pdf" },
+            { "label": "組合せ（PDF）", "url": "pdf/2026/20260215_draw.pdf" },
+            { "label": "結果（PDF）", "url": "pdf/2026/20260215_result.pdf" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "y2025",
+      "label": "2025年度",
+      "entries": [
+        {
+          "id": "y2025-001",
+          "title": "（例）2025年度 ◯◯大会",
+          "url": "#",
+          "updated": "2025-12-01",
+          "rows": [],
+          "files": [
+            { "label": "要項（PDF）", "url": "#" },
+            { "label": "結果（PDF）", "url": "#" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "y2024",
+      "label": "2024年度",
+      "entries": [
+        {
+          "id": "y2024-001",
+          "title": "（例）2024年度 ◯◯大会",
+          "url": "#",
+          "updated": "2024-10-01",
+          "rows": [],
+          "files": [
+            { "label": "要項（PDF）", "url": "#" },
+            { "label": "結果（PDF）", "url": "#" }
+          ]
+        }
+      ]
+    }
+  ]
+}

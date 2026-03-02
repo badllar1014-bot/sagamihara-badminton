@@ -485,3 +485,250 @@ html{ scroll-behavior: smooth; }
 
 /* Optional: anchor offset */
 section[id]{ scroll-margin-top: 14px; }
+
+/* ===== Home: お知らせ（更新日｜タイトル） ===== */
+.news-simple-list{
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(15,23,42,.12);
+}
+
+.news-simple-row{
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 2px;
+  border-bottom: 1px dotted rgba(15,23,42,.18);
+}
+
+.news-simple-date{
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.news-simple-titlewrap{
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.news-simple-title{
+  min-width: 0;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.news-simple-title:hover{ text-decoration: underline; }
+
+.news-simple-badge{
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(180,83,9,.35);
+  background: rgba(180,83,9,.08);
+  color: #b45309;
+}
+
+@media (max-width: 720px){
+  .news-simple-row{
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 10px 0;
+  }
+  .news-simple-title{
+    white-space: normal;
+  }
+}
+
+/* ===== Home お知らせ（シンプル：更新日｜タイトル） ===== */
+
+/* 既存の .list のデフォルトを避けるため、専用クラスで整形 */
+#homeNewsList .news-simple-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1行 = 2カラム（日付｜タイトル） */
+#homeNewsList .news-simple-row{
+  display: grid;
+  grid-template-columns: 140px 1fr; /* 日付カラム幅 */
+  column-gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(15,23,42,.14);
+}
+
+/* 左：日付（縦線を付ける） */
+#homeNewsList .news-simple-date{
+  padding-right: 10px;
+  border-right: 1px solid rgba(15,23,42,.18); /* ← 縦線 */
+  white-space: nowrap;
+  font-weight: 700;
+
+  /* 縦線を行いっぱいに */
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+/* 右：タイトル（細字にする） */
+#homeNewsList .news-simple-title{
+  font-weight: 400;            /* ← 細字 */
+  text-decoration: none;
+}
+
+/* NEWバッジ（見た目は今のままでOK、必要なら微調整） */
+#homeNewsList .news-simple-badge{
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  border: 1px solid rgba(180,83,9,.35);
+  background: rgba(180,83,9,.08);
+  color: #b45309;
+}
+
+/* スマホは日付幅を少し狭く */
+@media (max-width: 720px){
+  #homeNewsList .news-simple-row{
+    grid-template-columns: 120px 1fr;
+  }
+}
+
+/* 資料行：リンクを押しやすく */
+.home-docs-row{
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;          /* ← 各資料ブロックの間隔 */
+  margin-top: 6px;
+}
+
+.home-doc-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;           /* PDF と文言の間隔 */
+}
+
+/* PDFバッジ（クリック対象） */
+.home-doc-pdf{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 12px;
+  color: #fff;
+  background: #d40000;     /* PDFっぽい赤 */
+  text-decoration: none;
+}
+
+.home-doc-pdf:hover{
+  opacity: .9;
+}
+
+/* ラベル側リンク */
+.home-doc-label{
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+/* ===== ホーム：資料リンク（PDFだけリンク） ===== */
+.home-docs-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;          /* アイテム間隔 */
+  margin-top: 6px;
+}
+
+.home-doc-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;           /* PDF と 文言の間 */
+}
+
+/* PDFリンク（装飾なし・押しやすく） */
+.home-doc-pdf{
+  display: inline-block;
+  padding: 2px 6px;   /* クリック範囲 */
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* 要項/参加申込… は文字 */
+.home-doc-text{
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ===== ホーム：資料リンク（要項：PDF 形式） ===== */
+.home-docs-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;          /* アイテム同士の間隔 */
+  margin-top: 6px;
+}
+
+.home-doc-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;           /* 「要項：」とPDFの間 */
+}
+
+.home-doc-label{
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* PDFバッジ（赤背景）※文字が中央に来るように */
+.home-doc-pdf{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;  /* ← 横中央 */
+  min-width: 42px;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 6px;
+
+  background: #d40000;
+  color: #fff;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1;           /* ← 縦ズレ防止 */
+  text-decoration: none;
+}
+
+.home-doc-pdf:hover{
+  opacity: .85;
+}
+
+.home-doc-label{
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none; /* 念押し */
+}
+
+/* もし何かの都合で a に当たっても下線を消す保険 */
+.home-doc-item a.home-doc-label{
+  text-decoration: none !important;
+  pointer-events: none; /* クリック不可にしたい場合（不要なら消してOK） */
+}

@@ -1,0 +1,789 @@
+/* =========================================================
+   assets/style-taikai.css
+   ※assets/style.css（index.htmlと同じ）を先に読み込む前提
+   ========================================================= */
+
+
+/* =========================================================
+   0) Global Tabs (TOPNAV)  ※index.htmlのインラインCSSを移植
+   ========================================================= */
+
+:root{
+  --nav-line: 1px; /* 線の太さ */
+}
+
+.topnav{
+  margin: 14px 0 18px;
+  background: linear-gradient(180deg, #0b7a3a, #075f2d);
+  border: var(--nav-line) solid #ffffff;
+  border-radius: 0;
+  box-shadow: 0 8px 18px rgba(16,24,40,.10);
+}
+
+.topnav .nav-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border-right: var(--nav-line) solid #ffffff; /* 右端線の保険 */
+}
+
+.topnav nav{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  gap:0;
+  flex-wrap:wrap;
+}
+
+.topnav nav a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width: 140px;
+  padding: 14px 18px;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  text-decoration:none;
+  letter-spacing: .02em;
+
+  border: 0;
+  border-right: var(--nav-line) solid #ffffff;
+}
+
+/* 左端線 */
+.topnav nav a:first-child{
+  border-left: var(--nav-line) solid #ffffff;
+}
+
+/* 最後も右線あり（外枠と揃える） */
+.topnav nav a:last-child{
+  border-right: var(--nav-line) solid #ffffff;
+}
+
+.topnav nav a:hover{
+  background: rgba(0,0,0,.15);
+}
+
+/* スマホ2段 */
+@media (max-width: 720px){
+  .topnav nav a{
+    min-width: 50%;
+    border-right: var(--nav-line) solid #ffffff;
+    border-top: var(--nav-line) solid #ffffff;
+  }
+  .topnav nav a:nth-child(2n){ border-right: 0; }
+  .topnav nav a:nth-child(-n+2){ border-top: 0; }
+  .topnav nav a:nth-child(odd){ border-left: var(--nav-line) solid #ffffff; }
+  .topnav nav a:nth-child(even){ border-left: 0; }
+}
+
+
+/* =========================================================
+   1) Breadcrumb（背景なし・崩れない）
+   ========================================================= */
+
+.breadcrumb{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 10px;
+  font-size: 12px;
+  color: var(--muted);
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.breadcrumb a{
+  color: #1d4ed8;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover{
+  text-decoration: underline;
+}
+
+/* 「＞」を疑似要素で入れて単独落ちを防ぐ */
+.breadcrumb a::after{
+  content: "＞";
+  display: inline-block;
+  margin-left: 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.breadcrumb [aria-current="page"]{
+  color: var(--muted);
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   2) Page frame（大会情報ページの外枠）
+   ========================================================= */
+
+.page{
+  margin-top: 16px;
+  background: transparent;                /* ← 背景色を削除 */
+  border: 0;                              /* 枠も消す（必要なら下の案参照） */
+  border-radius: 0;
+  padding: 0;                             /* 余白も消す（必要なら 14px に戻す） */
+  box-shadow: none;                       /* 影も消す */
+}
+
+/* 2カラム：中央 + 右 */
+.page-inner{
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1.5fr .60fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* 中央コンテンツ（白カード） */
+.content{
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+
+/* =========================================================
+   3) Typography（index.htmlと同じトーンに揃える）
+   ========================================================= */
+
+.page-title{
+  margin: 6px 0 12px;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: .02em;
+}
+
+.entry-meta,
+.note,
+.file{
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   4) Right tab（右カラム）
+   ※競合していた「11px固定」を削除
+   ========================================================= */
+
+aside.card.right-tab .links a{
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 8px 10px;        /* 右カラムを詰める */
+  white-space: nowrap;      /* ★1行 */
+  overflow: hidden;
+  text-overflow: ellipsis;  /* ★入りきらない時は … */
+}
+
+aside.card.right-tab h3{
+  margin: 0 0 10px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  /* 見出し線（区切り感） */
+  padding-left: 10px;
+  border-left: 4px solid var(--green);
+}
+
+.right-tab{
+  position: sticky;
+  top: 12px;
+}
+
+/* =========================================================
+   右カラム（大会情報/お知らせ/各協会リンク）
+   index.html と同じ“間隔感”に統一
+   ========================================================= */
+
+/* リンク（タイトル） */
+.right-tab .links .title{
+  display: block;
+  font-size: 15px;            /* index.html の右カラムに合わせる */
+  line-height: 1.65;          /* 読みやすさ（詰まり防止） */
+  padding: 0;                 /* 余計なパディングは付けない */
+}
+
+/* セクション区切り */
+.right-tab .sep{
+  margin: 14px 0;
+}
+
+
+/* =========================================================
+   5) 年度切替UI
+   ========================================================= */
+
+.year-switch{
+  margin: 6px 0 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.year-tabs{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.year-tab{
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-weight: 900;
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.year-tab:hover{
+  background: rgba(11,122,58,.08);
+}
+
+.year-tab.is-active{
+  background: linear-gradient(180deg, #0b7a3a, #075f2d);
+  color: #fff;
+  border-color: rgba(255,255,255,.25);
+}
+
+.year-select{
+  display: none;
+}
+
+.year-select select{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  font-weight: 900;
+  background: #fff;
+}
+
+/* 年度パネル */
+.year-panel{ display: none; }
+.year-panel.is-show{ display: block; }
+
+.section-bar{
+  height: 6px;
+  background: linear-gradient(90deg, #0b7a3a, #075f2d);
+  border-radius: 999px;
+  margin: 12px 0 14px;
+}
+
+.note{
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   6) 大会カード（entry）
+   ========================================================= */
+
+.entry{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  background: #fff;
+  margin: 10px 0 14px;
+}
+
+.entry-head{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.entry-title{
+  text-decoration: none;
+  font-weight: 900;
+  color: #0b3b86;
+  font-size: 19px;
+}
+
+.entry-title:hover{ text-decoration: underline; }
+
+.tag{
+  font-size: 12px;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.tag.new{
+  color: #b45309;
+  border-color: rgba(180,83,9,.35);
+  background: rgba(180,83,9,.08);
+}
+
+.tag.upd{
+  color: #1d4ed8;
+  border-color: rgba(29,78,216,.30);
+  background: rgba(29,78,216,.08);
+}
+
+.entry-meta{
+  margin-top: 8px;
+  color: var(--text);
+  text-align: right;      
+}
+
+.row{
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  padding: 2px 0;
+}
+
+.k{ font-weight: 900; }
+.v{ color: var(--text); }
+
+.files{
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.file{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(0,0,0,.02);
+  color: #0b3b86;
+}
+
+.file:hover{
+  background: rgba(11,122,58,.10);
+}
+
+
+/* =========================================================
+   7) Responsive
+   ========================================================= */
+
+@media (max-width: 1100px){
+  .page-inner{
+    grid-template-columns: 1fr;
+  }
+  .right-tab{
+    position: static;
+  }
+}
+
+@media (max-width: 720px){
+  .page-title{ font-size: 26px; }
+  .year-tabs{ display: none; }
+  .year-select{ display: block; }
+}
+
+
+/* =========================================================
+   8) Mega Menu（ページ下部）※index.html同等
+   ========================================================= */
+
+.mega{
+  margin: 18px 0 0;
+  background: radial-gradient(circle at 50% 28%, #2c8b3e 0%, #0d5c2a 58%, #094a22 100%);
+  border: 1px solid rgba(255,255,255,.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,.20);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.mega-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 18px 18px;
+  display: grid;
+  grid-template-columns: 90px 180px 1fr 190px;
+  gap: 14px;
+  align-items: start;
+}
+
+.mega-col{ min-width: 0; }
+.mega-info{ min-width: 0; }
+
+.mega-col h2,
+.mega-info h2{
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  color: #fff;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.35);
+}
+
+.mega-col ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.mega-col ul.three{
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 18px;
+  row-gap: 8px;
+}
+
+.mega-col ul.three a{
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.mega a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 650;
+  display: block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.mega a::before{
+  content: "▶ ";
+  opacity: .85;
+}
+
+.mega a:hover{ text-decoration: underline; }
+
+.mega-info{
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(0,0,0,.08);
+  padding: 14px 14px 12px;
+}
+
+.mega-info p{
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1060px){
+  .mega-inner{ grid-template-columns: 210px 1fr; }
+  .mega-info{ grid-column: 1 / -1; }
+  .mega-col ul.three{ grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 620px){
+  .mega-inner{ grid-template-columns: 1fr; }
+  .mega-col ul.three{ grid-template-columns: 1fr; }
+}
+
+/* ===== 上部グレー帯(topbar)と緑帯(mega)の隙間を消す ===== */
+.topbar{
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mega{
+  margin-top: 0 !important;     /* ← 隙間の主因になりやすい */
+}
+
+/* 念のため：topbar直下の要素に余白があるケースも潰す */
+.topbar + .mega{
+  margin-top: 0 !important;
+}
+
+/* もし topbar-inner に余白がある場合 */
+.topbar-inner{
+  margin-bottom: 0 !important;
+  padding-bottom: 2px !important;
+}
+
+/* ===== page-title：左に緑ライン（確実に出す） ===== */
+.page-title{
+  position: relative;
+  padding-left: 14px;                 /* 線と文字の間隔 */
+  margin: 6px 0 12px;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: .02em;
+}
+
+/* 緑の縦線（疑似要素で確実に描画） */
+.page-title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;                        /* 文字の上に少し余白 */
+  bottom: 0.15em;                     /* 文字の下に少し余白 */
+  width: 4px;
+  background: #0b7a3a;                /* ここを緑に固定（確実） */
+  border-radius: 5px;
+}
+
+/* ===== 選択中タブ（aria-current="page"）を強調＆クリック不可 ===== */
+.topnav nav a[aria-current="page"]{
+  background: rgba(0,0,0,.22);                 /* 少し濃く */
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,.55); /* 下線っぽく */
+  font-weight: 900;                             /* 太字（1400は効かない環境あり） */
+  cursor: default;
+  pointer-events: none;                         /* クリック不可（連打防止） */
+  opacity: 1;
+}
+
+/* hoverしても変化しない（選択中だけ固定） */
+.topnav nav a[aria-current="page"]:hover{
+  background: rgba(0,0,0,.22);
+}
+
+/* ===== entryに左アクセントライン（区切りが強くなる） ===== */
+.content .entry{
+  margin: 16px 0;                         /* カード間の余白を増やす */
+  border: 1px solid rgba(15,23,42,.14);   /* 境界線を少し濃く */
+  position: relative;
+  padding-left: 16px;                      /* ライン分だけ左に余白 */
+  box-shadow: 0 8px 18px rgba(15,23,42,.06); /* 影を少しだけ強める */
+}
+
+.content .entry::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  background: rgba(11,122,58,.45);
+  border-radius: 6px;
+}
+
+/* ===== タイトル行：横並び＋下線を枠いっぱい ===== */
+.entry-head{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;                 /* タグをタイトル横に固定（改行させない） */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(11,122,58,.22); /* 枠いっぱいの線 */
+}
+
+/* タイトルは残り幅を使う（長い場合は省略） */
+.entry-title{
+  flex: 1 1 auto;
+  min-width: 0;                      /* 省略を効かせるため必須 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  text-decoration: none;             /* 既存リンク下線を消す */
+  font-weight: 900;
+}
+
+/* タグは右に寄せて固定 */
+.entry-head .tag{
+  flex: 0 0 auto;
+  margin-left: auto;                /* タイトルの右端へ */
+}
+
+/* 画像の「項目：値」行レイアウト */
+.entry-lines{
+  display: grid;
+  gap: 4px;
+}
+
+.entry-lines .line{
+  display: grid;
+  grid-template-columns: 120px .90fr; /* 左ラベル幅 */
+  gap: 0px;
+  align-items: start;
+}
+
+.entry-lines .label{
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.entry-lines .value{
+  min-width: 0; /* 折り返し用 */
+}
+
+/* ボタン群 */
+.entry-lines .actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+/* 「PDF 要項」みたいなボタン */
+.doc{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  color: #0b3b86;
+}
+
+.doc:hover{
+  background: rgba(11,122,58,.08);
+}
+
+/* アイコン（PDF/Excel） */
+.icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 22px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #fff;
+  flex: 0 0 auto;
+}
+
+.icon.pdf{ background: #d40000; }    /* 赤 */
+.icon.xls{ background: #0f8a3a; }    /* 緑 */
+
+/* スマホは縦積みに */
+@media (max-width: 720px){
+  .entry-lines .line{
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.news-controls{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin: 10px 0 14px;
+  flex-wrap: wrap;
+}
+
+.news-sort{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.news-sort select{
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background:#fff;
+  font-weight: 900;
+}
+
+.news-pager{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.pager-btn{
+  appearance:none;
+  border: 1px solid var(--line);
+  background:#fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 900;
+  cursor:pointer;
+}
+
+.pager-btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.page-info{
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.news-controls--bottom{
+  margin-top: 18px;
+}
+
+.news-controls{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 左=並べ替え / 右=ページャー */
+  gap: 12px;
+  margin: 10px 0 14px;
+}
+
+.news-sort{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.news-pager-bottom{
+  margin-left: auto;              /* 念押しで右寄せ */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-info{
+  min-width: 64px;
+  text-align: center;
+}
+
+@media (max-width: 720px){
+  .news-controls{
+    flex-wrap: wrap;
+  }
+  .news-pager-bottom{
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* 下側ページャーを右寄せ */
+.news-pager-bottom{
+  display: flex;
+  justify-content: flex-end; /* 右寄せ */
+  align-items: center;
+  gap: 12px;                 /* ボタン間の余白 */
+  margin-top: 14px;          /* 上との間隔（任意） */
+}
+
+/* もし 右端にピッタリ過ぎる場合 */
+.news-pager-bottom{
+  padding-right: 6px;        /* 任意 */
+}
+

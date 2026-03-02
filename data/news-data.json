@@ -1,0 +1,999 @@
+{
+  "schema": "sagamihara-badminton/news-v1",
+  "generated_at": "2026-02-24T00:59:01",
+  "items": [
+    {
+      "id": "news-001",
+      "title": "第◯回 ◯◯大会",
+      "url": "tournament/20260301.html",
+      "updated": "2026-02-15",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年2月7日（土）・8日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-002",
+      "title": "相模原カップ１",
+      "url": "tournament/20260215.html",
+      "updated": "2026-02-11",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年2月7日（土）・8日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-003",
+      "title": "相模原カップ２",
+      "url": "tournament/20260215.html",
+      "updated": "2026-02-10",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年2月7日（土）・8日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-004",
+      "title": "相模原カップ３",
+      "url": "tournament/20260215.html",
+      "updated": "2026-01-20",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年2月7日（土）・8日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-005",
+      "title": "相模原カップ相模原",
+      "url": "tournament/20260215.html",
+      "updated": "2026-01-01",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年1月1日（土）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-006",
+      "title": "更新日2/20おしらせはどうなるか",
+      "url": "tournament/20260215.html",
+      "updated": "2026-02-20",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年3月10日（土）・8日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-007",
+      "title": "GAJOSFRNKE",
+      "url": "tournament/20260215.html",
+      "updated": "2026-01-20",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年1月20日（土）・21日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-008",
+      "title": "2025/12/25",
+      "url": "tournament/20260215.html",
+      "updated": "2025-12-25",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年2月7日（土）・8日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-009",
+      "title": "最新データ",
+      "url": "tournament/20260215.html",
+      "updated": "2026-02-18",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和8年3月1日（土）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北神奈川協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-010",
+      "title": "EEEEEE",
+      "url": "tournament/20260215.html",
+      "updated": "2025-04-04",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和7年4月4日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        }
+      ]
+    },
+    {
+      "id": "news-011",
+      "title": "DDDDDD",
+      "url": "tournament/20260215.html",
+      "updated": "2025-01-30",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和7年1月30日（土）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-012",
+      "title": "CCC",
+      "url": "tournament/20260215.html",
+      "updated": "2024-10-10",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和6年10月10日（土）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-013",
+      "title": "BBB",
+      "url": "tournament/20260215.html",
+      "updated": "2024-07-07",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和6年7月7日（土）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "kanagawa 教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版）",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-014",
+      "title": "AAAAAA",
+      "url": "tournament/20260215.html",
+      "updated": "2024-01-01",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和6年1月1日（土）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "参加申込：",
+          "text": "X 参加申込",
+          "actions": [
+            {
+              "label": "X 参加申込",
+              "url": "xlsx/2026/20260301_entry.xlsx",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news-015",
+      "title": "最古データ",
+      "url": "tournament/20260215.html",
+      "updated": "2023-11-01",
+      "lines": [
+        {
+          "label": "期 日：",
+          "text": "令和5年11月1日（土）・8日（日）",
+          "actions": []
+        },
+        {
+          "label": "主 管：",
+          "text": "北海道教職員連盟、札幌地区協会",
+          "actions": []
+        },
+        {
+          "label": "会 場：",
+          "text": "酪農学園大学体育館",
+          "actions": []
+        },
+        {
+          "label": "要項等：",
+          "text": "PDF 要項",
+          "actions": [
+            {
+              "label": "PDF 要項",
+              "url": "pdf/2026/20260301_guideline.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "組合せ等：",
+          "text": "PDF 組合せ（訂正版） PDF タイムテーブル",
+          "actions": [
+            {
+              "label": "PDF 組合せ（訂正版）",
+              "url": "pdf/2026/20260301_draw.pdf",
+              "target": "_blank"
+            },
+            {
+              "label": "PDF タイムテーブル",
+              "url": "pdf/2026/20260301_timetable.pdf",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "結果等：",
+          "text": "PDF 教職員結果（修正版）",
+          "actions": [
+            {
+              "label": "PDF 教職員結果（修正版）",
+              "url": "pdf/2026/20260301_result.pdf",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

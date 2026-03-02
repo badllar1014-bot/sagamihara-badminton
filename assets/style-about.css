@@ -1,0 +1,814 @@
+/* =========================================================
+   assets/style-about.css
+   ※assets/style.css（index.htmlと同じ）を先に読み込む前提
+   ========================================================= */
+
+
+/* =========================================================
+   0) Global Tabs (TOPNAV)  ※index.htmlのインラインCSSを移植
+   ========================================================= */
+
+:root{
+  --nav-line: 1px; /* 線の太さ */
+}
+
+.topnav{
+  margin: 14px 0 18px;
+  background: linear-gradient(180deg, #0b7a3a, #075f2d);
+  border: var(--nav-line) solid #ffffff;
+  border-radius: 0;
+  box-shadow: 0 8px 18px rgba(16,24,40,.10);
+}
+
+.topnav .nav-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border-right: var(--nav-line) solid #ffffff; /* 右端線の保険 */
+}
+
+.topnav nav{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  gap:0;
+  flex-wrap:wrap;
+}
+
+.topnav nav a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width: 140px;
+  padding: 14px 18px;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  text-decoration:none;
+  letter-spacing: .02em;
+
+  border: 0;
+  border-right: var(--nav-line) solid #ffffff;
+}
+
+/* 左端線 */
+.topnav nav a:first-child{
+  border-left: var(--nav-line) solid #ffffff;
+}
+
+/* 最後も右線あり（外枠と揃える） */
+.topnav nav a:last-child{
+  border-right: var(--nav-line) solid #ffffff;
+}
+
+.topnav nav a:hover{
+  background: rgba(0,0,0,.15);
+}
+
+/* スマホ2段 */
+@media (max-width: 720px){
+  .topnav nav a{
+    min-width: 50%;
+    border-right: var(--nav-line) solid #ffffff;
+    border-top: var(--nav-line) solid #ffffff;
+  }
+  .topnav nav a:nth-child(2n){ border-right: 0; }
+  .topnav nav a:nth-child(-n+2){ border-top: 0; }
+  .topnav nav a:nth-child(odd){ border-left: var(--nav-line) solid #ffffff; }
+  .topnav nav a:nth-child(even){ border-left: 0; }
+}
+
+.topnav nav a[aria-current="page"]{
+  background: rgba(0,0,0,.22);      /* ほんの少し濃く */
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,.55); /* 下線っぽく */
+  font-weight: 1400;                 /* 太字 */
+  cursor: default;
+  pointer-events: none;             /* クリック不可（連打防止） */
+  opacity: 1;                       /* 文字は薄くしない */
+}
+
+/* hoverしても変化しない（選択中だけ固定） */
+.topnav nav a[aria-current="page"]:hover{
+  background: rgba(0,0,0,.22);
+}
+
+/* =========================================================
+   1) Breadcrumb（背景なし・崩れない）
+   ========================================================= */
+
+.breadcrumb{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 10px;
+  font-size: 12px;
+  color: var(--muted);
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.breadcrumb a{
+  color: #1d4ed8;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover{
+  text-decoration: underline;
+}
+
+/* 「＞」を疑似要素で入れて単独落ちを防ぐ */
+.breadcrumb a::after{
+  content: "＞";
+  display: inline-block;
+  margin-left: 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.breadcrumb [aria-current="page"]{
+  color: var(--muted);
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   2) Page frame（大会情報ページの外枠）
+   ========================================================= */
+
+.page{
+  margin-top: 16px;
+  background: transparent;                /* ← 背景色を削除 */
+  border: 0;                              /* 枠も消す（必要なら下の案参照） */
+  border-radius: 0;
+  padding: 0;                             /* 余白も消す（必要なら 14px に戻す） */
+  box-shadow: none;                       /* 影も消す */
+}
+
+/* 2カラム：中央 + 右 */
+.page-inner{
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1.5fr .60fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* 中央コンテンツ（白カード） */
+.content{
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+
+/* =========================================================
+   3) Typography（index.htmlと同じトーンに揃える）
+   ========================================================= */
+
+.page-title{
+  margin: 6px 0 12px;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: .02em;
+}
+
+.entry-meta,
+.note,
+.file{
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   4) Right tab（右カラム）
+   ※競合していた「11px固定」を削除
+   ========================================================= */
+
+aside.card.right-tab .links a{
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 8px 10px;        /* 右カラムを詰める */
+  white-space: nowrap;      /* ★1行 */
+  overflow: hidden;
+  text-overflow: ellipsis;  /* ★入りきらない時は … */
+}
+
+aside.card.right-tab h3{
+  margin: 0 0 10px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  /* 見出し線（区切り感） */
+  padding-left: 10px;
+  border-left: 4px solid var(--green);
+}
+
+.right-tab{
+  position: sticky;
+  top: 12px;
+}
+
+/* ====== 見出しの左に緑ラインを「確実に」出す（最終追記推奨） ====== */
+:root{
+  --green: #0b7a3a;          /* 無ければここで定義 */
+  --green-accent: #22c55e;   /* ライン用：少し明るい緑（背景と同化しない） */
+}
+
+/* セクション見出し（h3.about-title） */
+.about-block > .about-title{
+  position: relative !important;
+  padding-left: 18px !important;
+  border-left: 0 !important;           /* 競合回避 */
+}
+
+/* about-title は背景が緑なので、同化しないよう明るい緑ラインにする */
+.about-block > .about-title::before{
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 6px !important;
+  height: 100% !important;             /* 見出し帯の高さ全部 */
+  background: var(--green-accent, #22c55e) !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* 入会・登録の流れ：読みやすい版 */
+.flow-lead{
+  margin: 0 0 10px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.doc-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(11,122,58,.06);
+  font-weight: 900;
+  color: #0b3b86;
+  text-decoration: none;
+}
+.doc-btn:hover{
+  background: rgba(11,122,58,.12);
+}
+
+.flow-list{
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.flow-list > li{
+  margin: 0 0 14px;
+}
+
+.flow-item-title{
+  font-weight: 900;
+  margin: 0 0 4px;
+}
+
+.flow-item-text{
+  color: var(--text);
+  font-size: 14px;
+}
+
+.flow-sublist{
+  margin: 8px 0 8px;
+  padding-left: 18px;
+}
+
+.flow-note{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* 白い枠の内側に余白（文字が枠に近い問題の解消） */
+.about-block,
+.flow-block{
+  padding: 16px 18px;     /* 上下16px / 左右18px（左も空く） */
+}
+
+/* 緑の見出しは外側まで伸ばしたい場合：padding分を打ち消す */
+.about-block .about-title,
+.flow-block .flow-title{
+  margin: -16px -18px 14px;  /* 見出しバーを枠いっぱいに戻す */
+  padding: 12px 14px 12px 16px; /* 左を少し厚めに */
+  border-radius: 14px 14px 0 0; /* 角丸維持（必要なら） */
+}
+
+.schedule-actions{
+  margin: 10px 0 6px;
+}
+
+/* =========================================================
+   右カラム（大会情報/お知らせ/各協会リンク）
+   index.html と同じ“間隔感”に統一
+   ========================================================= */
+
+/* リンク（タイトル） */
+.right-tab .links .title{
+  display: block;
+  font-size: 15px;            /* index.html の右カラムに合わせる */
+  line-height: 1.65;          /* 読みやすさ（詰まり防止） */
+  padding: 0;                 /* 余計なパディングは付けない */
+}
+
+/* セクション区切り */
+.right-tab .sep{
+  margin: 14px 0;
+}
+
+
+/* =========================================================
+   5) 年度切替UI
+   ========================================================= */
+
+.year-switch{
+  margin: 6px 0 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.year-tabs{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.year-tab{
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-weight: 900;
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.year-tab:hover{
+  background: rgba(11,122,58,.08);
+}
+
+.year-tab.is-active{
+  background: linear-gradient(180deg, #0b7a3a, #075f2d);
+  color: #fff;
+  border-color: rgba(255,255,255,.25);
+}
+
+.year-select{
+  display: none;
+}
+
+.year-select select{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  font-weight: 900;
+  background: #fff;
+}
+
+/* 年度パネル */
+.year-panel{ display: none; }
+.year-panel.is-show{ display: block; }
+
+.section-bar{
+  height: 6px;
+  background: linear-gradient(90deg, #0b7a3a, #075f2d);
+  border-radius: 999px;
+  margin: 12px 0 14px;
+}
+
+.note{
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   6) 大会カード（entry）
+   ========================================================= */
+
+.entry{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  background: #fff;
+  margin: 10px 0 14px;
+}
+
+.entry-head{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.entry-title{
+  text-decoration: none;
+  font-weight: 900;
+  color: #0b3b86;
+  font-size: 16px;
+}
+
+.entry-title:hover{ text-decoration: underline; }
+
+.tag{
+  font-size: 12px;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.tag.new{
+  color: #b45309;
+  border-color: rgba(180,83,9,.35);
+  background: rgba(180,83,9,.08);
+}
+
+.tag.upd{
+  color: #1d4ed8;
+  border-color: rgba(29,78,216,.30);
+  background: rgba(29,78,216,.08);
+}
+
+.entry-meta{
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.row{
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.k{ font-weight: 900; }
+.v{ color: var(--text); }
+
+.files{
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.file{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(0,0,0,.02);
+  color: #0b3b86;
+}
+
+.file:hover{
+  background: rgba(11,122,58,.10);
+}
+
+
+/* =========================================================
+   7) Responsive
+   ========================================================= */
+
+@media (max-width: 1100px){
+  .page-inner{
+    grid-template-columns: 1fr;
+  }
+  .right-tab{
+    position: static;
+  }
+}
+
+@media (max-width: 720px){
+  .page-title{ font-size: 26px; }
+  .year-tabs{ display: none; }
+  .year-select{ display: block; }
+}
+
+
+/* =========================================================
+   8) Mega Menu（ページ下部）※index.html同等
+   ========================================================= */
+
+.mega{
+  margin: 18px 0 0;
+  background: radial-gradient(circle at 50% 28%, #2c8b3e 0%, #0d5c2a 58%, #094a22 100%);
+  border: 1px solid rgba(255,255,255,.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,.20);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.mega-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 18px 18px;
+  display: grid;
+  grid-template-columns: 90px 180px 1fr 190px;
+  gap: 14px;
+  align-items: start;
+}
+
+.mega-col{ min-width: 0; }
+.mega-info{ min-width: 0; }
+
+.mega-col h2,
+.mega-info h2{
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  color: #fff;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.35);
+}
+
+.mega-col ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.mega-col ul.three{
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 18px;
+  row-gap: 8px;
+}
+
+.mega-col ul.three a{
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.mega a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 650;
+  display: block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.mega a::before{
+  content: "▶ ";
+  opacity: .85;
+}
+
+.mega a:hover{ text-decoration: underline; }
+
+.mega-info{
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(0,0,0,.08);
+  padding: 14px 14px 12px;
+}
+
+.mega-info p{
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1060px){
+  .mega-inner{ grid-template-columns: 210px 1fr; }
+  .mega-info{ grid-column: 1 / -1; }
+  .mega-col ul.three{ grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 620px){
+  .mega-inner{ grid-template-columns: 1fr; }
+  .mega-col ul.three{ grid-template-columns: 1fr; }
+}
+
+/* ===== 上部グレー帯(topbar)と緑帯(mega)の隙間を消す ===== */
+.topbar{
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mega{
+  margin-top: 0 !important;     /* ← 隙間の主因になりやすい */
+}
+
+/* 念のため：topbar直下の要素に余白があるケースも潰す */
+.topbar + .mega{
+  margin-top: 0 !important;
+}
+
+/* もし topbar-inner に余白がある場合 */
+.topbar-inner{
+  margin-bottom: 0 !important;
+  padding-bottom: 2px !important;
+}
+
+/* ===== About page: left content only ===== */
+.about-block{
+  margin: 0 0 18px;
+  border: 1px solid rgba(15, 120, 60, .18);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.about-title{
+  margin: 0;
+  padding: 12px 14px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(180deg, #238a3a, #0b6b2f);
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+/* ===== 役員紹介 ===== */
+.member-grid{
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)); /* PC：横に多め */
+  gap: 12px;
+}
+
+@media (max-width: 1100px){
+  .member-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 720px){
+  .member-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.member-card{
+  border: 1px solid rgba(15, 120, 60, .16);
+  border-radius: 12px;
+  padding: 10px 10px 8px;
+  background: linear-gradient(180deg, rgba(15,120,60,.06), rgba(15,120,60,.02));
+  text-align: center;
+}
+
+.member-photo{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid rgba(15,120,60,.25);
+  background: #f3f6f4;
+}
+
+.member-name{
+  margin-top: 8px;
+  font-weight: 900;
+  font-size: 14px;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.member-role{
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0b6b2f;
+}
+
+/* ===== 協会組織（ツリー） ===== */
+.org-wrap{ padding: 14px; }
+
+.org, .org ul{
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.org > li{
+  display: flex;
+  justify-content: center;
+}
+
+.org li{
+  position: relative;
+  padding-top: 18px;
+}
+
+.org-node{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 13px;
+  color: #0f172a;
+  background: #e9f7ec;
+  border: 1px solid rgba(11,107,47,.25);
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+  min-width: 120px;
+  text-align: center;
+}
+
+.org-node.small{
+  min-width: 150px;
+  padding: 9px 12px;
+}
+
+/* 親子の縦線 */
+.org li::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 18px;
+  background: rgba(11,107,47,.35);
+  transform: translateX(-50%);
+}
+.org > li::before{ display:none; }
+
+/* 子を横に並べる */
+.org ul{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  position: relative;
+}
+
+/* 子リスト上の横線 */
+.org ul::before{
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: rgba(11,107,47,.25);
+}
+
+/* 委員会を横並び */
+.org-row{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 720px){
+  .org ul::before{ left: 18%; right: 18%; }
+  .org-node.small{ min-width: 140px; }
+}
+/* ===== page-title：左に緑ライン（統一定義） ===== */
+:root{
+  --green: #0b7a3a;
+  --title-accent-w: 4px;     /* 緑線の太さ（大会情報と同じ） */
+  --title-accent-gap: 14px;  /* 線と文字の間隔（大会情報と同じ） */
+  --title-font: 28px;        /* 文字サイズ（大会情報と同じ） */
+}
+
+/* 協会案内 / 大会情報で完全に同じ見え方にする */
+.page-title{
+  position: relative;
+  padding-left: var(--title-accent-gap);
+  margin: 6px 0 12px;
+  font-size: var(--title-font);
+  line-height: 1.25;
+  letter-spacing: .02em;
+}
+
+/* 緑の縦線（大会情報方式：top/bottomで揃える） */
+.page-title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: var(--title-accent-w);
+  background: var(--green);
+  border-radius: 5px;
+}

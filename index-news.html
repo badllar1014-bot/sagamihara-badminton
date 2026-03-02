@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>お知らせ｜相模原市バドミントン協会</title>
+  <meta name="description" content="相模原市バドミントン協会の大会情報ページ。年度別に要項・申込・組合せ・結果などを掲載します。" />
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style-news.css">
+</head>
+
+<body>
+  <a id="top"></a>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="相模原市バドミントン協会 トップへ">
+        <div class="logo-wrap" aria-hidden="true">
+          <img src="parts/logo.png" alt="相模原市バドミントン協会 ロゴ">
+        </div>
+        <div class="brand-text">
+          <h1>相模原市バドミントン協会</h1>
+        </div>
+      </a>
+    </header>
+
+    <div class="topnav" role="navigation" aria-label="グローバルナビゲーション">
+      <div class="nav-inner">
+        <nav aria-label="グローバルナビ">
+          <a href="index-about.html">協会案内</a>
+          <a href="index-taikai.html">大会情報</a>
+          <a href="index-news.html" aria-current="page">お知らせ</a>
+          <a href="index-records.html">栄光の記録</a>
+        </nav>
+      </div>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくず">
+      <a href="index.html">HOME</a>
+      <span aria-current="page">お知らせ</span>
+    </nav>
+
+    <!-- Page frame -->
+    <div class="page">
+      <div class="page-inner">
+        <!-- Main -->
+        <main class="content" aria-label="お知らせ全文">
+          <h2 class="page-title">お知らせ</h2>
+
+          <div class="section-bar"></div>
+
+          <div class="news-controls" aria-label="お知らせ操作">
+            <div class="news-sort">
+              <label for="sortSelect">並べ替え：</label>
+              <select id="sortSelect">
+                <option value="desc" selected>更新日 新しい順</option>
+                <option value="asc">更新日 古い順</option>
+              </select>
+            </div>
+            <div class="news-pager">
+              <button id="prevPage" type="button" class="pager-btn" disabled>← 前へ</button>
+              <span id="pageInfo" class="page-info">1 / 1</span>
+              <button id="nextPage" type="button" class="pager-btn" disabled>次へ →</button>
+            </div>
+          </div>
+
+          <div id="newsList"></div>
+
+          <!-- controls (bottom) -->
+          <div class="news-pager-bottom">
+            <button id="prevPageBottom" type="button" class="pager-btn" disabled>← 前へ</button>
+            <span id="pageInfoBottom" class="page-info">1 / 1</span>
+            <button id="nextPageBottom" type="button" class="pager-btn" disabled>次へ →</button>
+          </div>
+
+        </main>
+
+        <!-- Right tab：内容はそのまま -->
+        <aside class="card right-tab" aria-label="ショートカット">
+          <h3>大会情報</h3>
+          <div class="links"><a class="title" href="index-results.html?key=open_team">相模原オープン大会（団体戦）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=shimin_single">相模原市民バドミントン選手権大会（シングルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=shimin_double">相模原市民バドミントン選手権大会（ダブルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=open_double">相模原オープンダブルス大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=age_mix">相模原年齢別ﾐｯｸｽ大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=open_elem">相模原オープン小学生大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=sogo_single">相模原市総合選手権大会（シングルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=sogo_double">相模原市総合選手権大会（ダブルス）</a></div>
+
+          <div class="sep"></div>
+
+          <h3>お知らせ</h3>
+          <div class="links"><a class="title" href="index-regist.html">協会登録について</a></div>
+          <div class="links"><a class="title" href="news.html">主催大会以外の結果について</a></div>
+
+          <div class="sep"></div>
+
+          <h3>各協会のリンク</h3>
+          <div class="links"><a class="title" href="https://www.badminton.or.jp/">日本バドミントン協会</a></div>
+          <div class="links"><a class="title" href="https://www.badminton-kk.org/">神奈川県バドミントン協会</a></div>
+          <div class="links"><a class="title" href="https://sagamihara-redhi-su-bado.jimdofree.com/">相模原レディース連盟</a></div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- 上部グレー帯：ページ上部へ -->
+    <div class="topbar" aria-label="ページ操作">
+      <div class="topbar-inner">
+        <a class="topbar-btn" href="#top">↑ ページの上部へ</a>
+      </div>
+    </div>
+
+    <!-- =========================
+        Header Mega Menu（北海道サイト風）
+        ========================= -->
+    <section class="mega" aria-label="ヘッダーメニュー">
+      <div class="mega-inner">
+
+        <!-- 1) メニュー -->
+        <div class="mega-col">
+          <h2>メニュー</h2>
+          <ul>
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="index-about.html">協会案内</a></li>
+            <li><a href="index-taikai.html">大会情報</a></li>
+            <li><a href="index-news.html">お知らせ</a></li>
+            <li><a href="index-records.html">結果</a></li>
+          </ul>
+        </div>
+
+        <!-- 2) お知らせ -->
+        <div class="mega-col">
+          <h2>お知らせ</h2>
+          <ul>
+            <li><a href="index-regist.html">協会登録について</a></li>
+            <li><a href="news.html">主催大会以外の結果について</a></li>
+          </ul>
+        </div>
+
+        <!-- 3) 大会情報 -->
+        <div class="mega-col">
+          <h2>大会情報</h2>
+          <ul class="three">
+            <li><a href="index-results.html?key=open_team">相模原オープン大会（団体戦）</a></li>
+            <li><a href="index-results.html?key=shimin_single">相模原市民バドミントン選手権大会（シングルス）</a></li>
+            <li><a href="index-results.html?key=shimin_double">相模原市民バドミントン選手権大会（ダブルス）</a></li>
+            <li><a href="index-results.html?key=open_double">相模原オープンダブルス大会</a></li>
+            <li><a href="index-results.html?key=age_mix">相模原年齢別ﾐｯｸｽ大会</a></li>
+            <li><a href="index-results.html?key=open_elem">相模原オープン小学生大会</a></li>
+            <li><a href="index-results.html?key=sogo_single">相模原市総合選手権大会（シングルス）</a></li>
+            <li><a href="index-results.html?key=sogo_double">相模原市総合選手権大会（ダブルス）</a></li>
+          </ul>
+        </div>
+
+        <!-- 4) 協会情報（右の枠） -->
+        <aside class="mega-info" aria-label="協会情報">
+          <h2>相模原市バドミントン協会</h2>
+          <p>
+            問合せ先：石原 清行
+          </p>
+          <p>
+            Tel. 090-1541-5590<br>
+            （電話は18～22時にお願いします）
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> 相模原市バドミントン協会</div>
+      <div>最終更新日：2026-02-10</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const tabs = Array.from(document.querySelectorAll(".year-tab"));
+    const panels = Array.from(document.querySelectorAll(".year-panel"));
+    const select = document.getElementById("yearSelect");
+
+    function showPanel(id){
+      panels.forEach(p => p.classList.toggle("is-show", p.id === id));
+      tabs.forEach(t => {
+        const on = (t.dataset.target === id);
+        t.classList.toggle("is-active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      if (select.value !== id) select.value = id;
+      // 年度切替時は上部に寄せる（任意）
+      document.querySelector(".content").scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    tabs.forEach(t => t.addEventListener("click", () => showPanel(t.dataset.target)));
+    select.addEventListener("change", () => showPanel(select.value));
+  </script>
+  <script>
+    (function(){
+      const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+      function parseYmdLocal(ymd){
+        const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(ymd || "");
+        if(!m) return null;
+        return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+      }
+      function floorToLocalDay(dt){
+        return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+      }
+      function formatJP(ymd){
+        const d = parseYmdLocal(ymd);
+        if(!d) return "";
+        const y = d.getFullYear();
+        const m = String(d.getMonth()+1).padStart(2,"0");
+        const day = String(d.getDate()).padStart(2,"0");
+        return `${y}年${m}月${day}日`;
+      }
+
+      const today = floorToLocalDay(new Date());
+
+      document.querySelectorAll("article.entry").forEach(entry => {
+        const updatedStr = entry.getAttribute("data-updated");
+        const updated = parseYmdLocal(updatedStr);
+
+        // --- 1) 更新日表示（右端）を data-updated からセット ---
+        // entry-head がある前提。無ければ entry の先頭に作る
+        const head = entry.querySelector(".entry-head") || entry;
+
+        // 既存の .entry-meta を使う。無ければ作る
+        let meta = entry.querySelector(".entry-meta");
+        if(!meta){
+          meta = document.createElement("div");
+          meta.className = "entry-meta";
+          // 見出し直下に入れる（あなたの構造に合わせるならここが安全）
+          head.insertAdjacentElement("afterend", meta);
+        }
+        // data-updated が正しい時だけ表示（無い/不正なら空にしない＝既存温存でもOK）
+        if(updated){
+          meta.textContent = `更新日：${formatJP(updatedStr)}`;
+        }
+
+        // --- 2) NEW判定（0〜7日前だけ表示、8日前以上は非表示） ---
+        const existingNew = entry.querySelector(".tag.new");
+        if(!updated){
+          if(existingNew) existingNew.remove();
+          return;
+        }
+
+        const diffDays = Math.floor((today - floorToLocalDay(updated)) / MS_PER_DAY);
+        const shouldShowNew = (diffDays >= 0 && diffDays <= 14); // 今日を0日目として、14日以内をNEWとする例
+
+        if(shouldShowNew){
+          if(!existingNew){
+            const span = document.createElement("span");
+            span.className = "tag new";
+            span.textContent = "NEW";
+            head.appendChild(span);
+          }
+        }else{
+          if(existingNew) existingNew.remove();
+        }
+      });
+    })();
+
+    // ===== お知らせ：並べ替え & ページング =====
+    (function(){
+      const PAGE_SIZE = 10;
+
+      // top controls
+      const sortTop = document.getElementById("sortSelect");
+      const prevTop = document.getElementById("prevPage");
+      const nextTop = document.getElementById("nextPage");
+      const infoTop = document.getElementById("pageInfo");
+
+      // bottom controls
+      const sortBottom = document.getElementById("sortSelectBottom");
+      const prevBottom = document.getElementById("prevPageBottom");
+      const nextBottom = document.getElementById("nextPageBottom");
+      const infoBottom = document.getElementById("pageInfoBottom");
+
+      const listRoot = document.getElementById("newsList");
+      if (!listRoot) return;
+
+      const entries = Array.from(listRoot.querySelectorAll("article.entry"));
+      if (!entries.length) return;
+
+      if (!entries.length || !sortTop || !prevTop || !nextTop || !infoTop) return;
+
+      // bottom controls は無くても動くように（あれば同期）
+      const hasBottom = !!(sortBottom && prevBottom && nextBottom && infoBottom);
+
+      function getUpdatedDate(entry){
+        const v = (entry.dataset.updated || "").trim();
+        const d = new Date(v); // "YYYY-MM-DD" 推奨
+        return isNaN(d.getTime()) ? new Date(0) : d;
+      }
+
+      let currentPage = 1;
+      let currentOrder = sortTop.value; // 'desc' or 'asc'
+      let sorted = entries.slice();
+
+      function syncSortUI(){
+        sortTop.value = currentOrder;
+        if (hasBottom) sortBottom.value = currentOrder;
+      }
+
+      function syncPagerUI(totalPages){
+        const text = `${currentPage} / ${totalPages}`;
+
+        infoTop.textContent = text;
+        prevTop.disabled = currentPage <= 1;
+        nextTop.disabled = currentPage >= totalPages;
+
+        if (hasBottom){
+          infoBottom.textContent = text;
+          prevBottom.disabled = currentPage <= 1;
+          nextBottom.disabled = currentPage >= totalPages;
+        }
+      }
+
+      function sortEntries(){
+        const dir = currentOrder === "asc" ? 1 : -1;
+        sorted.sort((a,b) => (getUpdatedDate(a) - getUpdatedDate(b)) * dir);
+      }
+
+      function render(scrollToTop){
+        // newsList の中だけ消す
+        listRoot.querySelectorAll(":scope > article.entry").forEach(el => el.remove());
+
+        const total = sorted.length;
+        const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        currentPage = Math.min(Math.max(1, currentPage), totalPages);
+
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const end = start + PAGE_SIZE;
+        sorted.slice(start, end).forEach(el => listRoot.appendChild(el));
+
+        syncSortUI();
+        syncPagerUI(totalPages);
+
+        if (scrollToTop){
+          document.querySelector(".content").scrollIntoView({behavior:"smooth", block:"start"});
+        }
+      }
+
+      // events: sort
+      sortTop.addEventListener("change", () => {
+        currentOrder = sortTop.value;
+        currentPage = 1;
+        sortEntries();
+        render(false);
+      });
+      if (hasBottom){
+        sortBottom.addEventListener("change", () => {
+          currentOrder = sortBottom.value;
+          currentPage = 1;
+          sortEntries();
+          render(false);
+        });
+      }
+
+      // events: paging
+      function goPrev(){
+        currentPage -= 1;
+        render(true);
+      }
+      function goNext(){
+        currentPage += 1;
+        render(true);
+      }
+
+      prevTop.addEventListener("click", goPrev);
+      nextTop.addEventListener("click", goNext);
+
+      if (hasBottom){
+        prevBottom.addEventListener("click", goPrev);
+        nextBottom.addEventListener("click", goNext);
+      }
+
+      // init
+      sortEntries();
+      render(false);
+    })();
+  </script>
+
+  <script src="assets/news-render.js" defer></script>
+
+</body>
+</html>

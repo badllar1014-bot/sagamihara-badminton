@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>大会情報｜相模原市バドミントン協会</title>
+  <meta name="description" content="相模原市バドミントン協会の大会情報ページ。年度別に要項・申込・組合せ・結果などを掲載します。" />
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style-taikai.css">
+</head>
+
+<body>
+  <a id="top"></a>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="相模原市バドミントン協会 トップへ">
+        <div class="logo-wrap" aria-hidden="true">
+          <img src="parts/logo.png" alt="相模原市バドミントン協会 ロゴ">
+        </div>
+        <div class="brand-text">
+          <h1>相模原市バドミントン協会</h1>
+        </div>
+      </a>
+    </header>
+
+    <div class="topnav" role="navigation" aria-label="グローバルナビゲーション">
+      <div class="nav-inner">
+        <nav aria-label="グローバルナビ">
+          <a href="index-about.html">協会案内</a>
+          <a href="index-taikai.html" aria-current="page">大会情報</a>
+          <a href="index-news.html">お知らせ</a>
+          <a href="index-records.html">栄光の記録</a>
+        </nav>
+      </div>
+    </div>
+
+    <nav class="breadcrumb" aria-label="パンくず">
+      <a href="index.html">HOME</a>
+      <span aria-current="page">大会情報</span>
+    </nav>
+
+    <!-- Page frame -->
+    <div class="page">
+      <div class="page-inner">
+        <!-- Main -->
+        <main class="content" aria-label="大会情報本文">
+          <h2 class="page-title">大会情報</h2>
+
+          <!-- 年度切り替えUI -->
+          <div class="year-switch" aria-label="年度切り替え">
+            <!-- スマホ用：セレクト -->
+            <label class="year-select" for="yearSelect">
+              <span class="sr-only">年度を選択</span>
+              <select id="yearSelect">
+                <option value="y2026" selected>2026年度</option>
+                <option value="y2025">2025年度</option>
+                <option value="y2024">2024年度</option>
+              </select>
+            </label>
+
+            <!-- PC用：タブ -->
+            <div class="year-tabs" role="tablist" aria-label="年度タブ">
+              <button class="year-tab is-active" role="tab" aria-selected="true" aria-controls="y2026" data-target="y2026">2026年度</button>
+              <button class="year-tab" role="tab" aria-selected="false" aria-controls="y2025" data-target="y2025">2025年度</button>
+              <button class="year-tab" role="tab" aria-selected="false" aria-controls="y2024" data-target="y2024">2024年度</button>
+            </div>
+          </div>
+
+          <!-- ===== 2026 ===== -->
+          <section id="y2026" class="year-panel is-show" role="tabpanel" aria-label="2026年度"></section>
+
+          <!-- ===== 2025 ===== -->
+          <section id="y2025" class="year-panel" role="tabpanel" aria-label="2025年度"></section>
+
+          <!-- ===== 2024 ===== -->
+          <section id="y2024" class="year-panel" role="tabpanel" aria-label="2024年度"></section>
+
+        </main>
+
+        <!-- Right tab：内容はそのまま -->
+        <aside class="card right-tab" aria-label="ショートカット">
+          <h3>大会情報</h3>
+          <div class="links"><a class="title" href="index-results.html?key=open_team">相模原オープン大会（団体戦）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=shimin_single">相模原市民バドミントン選手権大会（シングルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=shimin_double">相模原市民バドミントン選手権大会（ダブルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=open_double">相模原オープンダブルス大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=age_mix">相模原年齢別ﾐｯｸｽ大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=open_elem">相模原オープン小学生大会</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=sogo_single">相模原市総合選手権大会（シングルス）</a></div>
+          <div class="links"><a class="title" href="index-results.html?key=sogo_double">相模原市総合選手権大会（ダブルス）</a></div>
+
+          <div class="sep"></div>
+
+          <h3>お知らせ</h3>
+          <div class="links"><a class="title" href="index-regist.html">協会登録について</a></div>
+          <div class="links"><a class="title" href="news.html">主催大会以外の結果について</a></div>
+
+          <div class="sep"></div>
+
+          <h3>各協会のリンク</h3>
+          <div class="links"><a class="title" href="https://www.badminton.or.jp/">日本バドミントン協会</a></div>
+          <div class="links"><a class="title" href="https://www.badminton-kk.org/">神奈川県バドミントン協会</a></div>
+          <div class="links"><a class="title" href="https://sagamihara-redhi-su-bado.jimdofree.com/">相模原レディース連盟</a></div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- 上部グレー帯：ページ上部へ -->
+    <div class="topbar" aria-label="ページ操作">
+      <div class="topbar-inner">
+        <a class="topbar-btn" href="#top">↑ ページの上部へ</a>
+      </div>
+    </div>
+
+    <!-- =========================
+        Header Mega Menu（北海道サイト風）
+        ========================= -->
+    <section class="mega" aria-label="ヘッダーメニュー">
+      <div class="mega-inner">
+
+        <!-- 1) メニュー -->
+        <div class="mega-col">
+          <h2>メニュー</h2>
+          <ul>
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="index-about.html">協会案内</a></li>
+            <li><a href="index-taikai.html">大会情報</a></li>
+            <li><a href="index-news.html">お知らせ</a></li>
+            <li><a href="index-records.html">結果</a></li>
+          </ul>
+        </div>
+
+        <!-- 2) お知らせ -->
+        <div class="mega-col">
+          <h2>お知らせ</h2>
+          <ul>
+            <li><a href="index-regist.html">協会登録について</a></li>
+            <li><a href="news.html">主催大会以外の結果について</a></li>
+          </ul>
+        </div>
+
+        <!-- 3) 大会情報 -->
+        <div class="mega-col">
+          <h2>大会情報</h2>
+          <ul class="three">
+            <li><a href="index-results.html?key=open_team">相模原オープン大会（団体戦）</a></li>
+            <li><a href="index-results.html?key=shimin_single">相模原市民バドミントン選手権大会（シングルス）</a></li>
+            <li><a href="index-results.html?key=shimin_double">相模原市民バドミントン選手権大会（ダブルス）</a></li>
+            <li><a href="index-results.html?key=open_double">相模原オープンダブルス大会</a></li>
+            <li><a href="index-results.html?key=age_mix">相模原年齢別ﾐｯｸｽ大会</a></li>
+            <li><a href="index-results.html?key=open_elem">相模原オープン小学生大会</a></li>
+            <li><a href="index-results.html?key=sogo_single">相模原市総合選手権大会（シングルス）</a></li>
+            <li><a href="index-results.html?key=sogo_double">相模原市総合選手権大会（ダブルス）</a></li>
+          </ul>
+        </div>
+
+        <!-- 4) 協会情報（右の枠） -->
+        <aside class="mega-info" aria-label="協会情報">
+          <h2>相模原市バドミントン協会</h2>
+          <p>
+            問合せ先：石原 清行
+          </p>
+          <p>
+            Tel. 090-1541-5590<br>
+            （電話は18～22時にお願いします）
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> 相模原市バドミントン協会</div>
+      <div>最終更新日：2026-02-10</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const tabs = Array.from(document.querySelectorAll(".year-tab"));
+    const panels = Array.from(document.querySelectorAll(".year-panel"));
+    const select = document.getElementById("yearSelect");
+
+    function showPanel(id){
+      panels.forEach(p => p.classList.toggle("is-show", p.id === id));
+      tabs.forEach(t => {
+        const on = (t.dataset.target === id);
+        t.classList.toggle("is-active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      if (select.value !== id) select.value = id;
+      // 年度切替時は上部に寄せる（任意）
+      document.querySelector(".content").scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    tabs.forEach(t => t.addEventListener("click", () => showPanel(t.dataset.target)));
+    select.addEventListener("change", () => showPanel(select.value));
+  </script>
+
+  <script src="assets/taikai-render.js" defer></script>
+
+</body>
+</html>
