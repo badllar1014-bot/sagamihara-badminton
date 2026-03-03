@@ -863,3 +863,13 @@ section[id]{ scroll-margin-top: 14px; }
     max-height: 360px;
   }
 }
+
+/* スライドショーの見出し「フォトギャラリー」を非表示 */
+#slideshow > h3{
+  display: none;
+}
+
+/* Prev/Nextボタンを必ず前面に出す */
+#slideshow .slider-btn{
+  z-index: 5;
+}
