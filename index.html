@@ -269,6 +269,22 @@
     <div class="grid">
       <!-- 左カラム -->
       <div class="left-col">
+        <section id="slideshow" class="card">
+          <h3>フォトギャラリー</h3>
+
+          <div class="slider" aria-label="写真スライドショー">
+            <button class="slider-btn prev" type="button" aria-label="前へ">‹</button>
+
+            <div class="slider-viewport">
+              <img id="sliderImg" class="slider-img" src="" alt="">
+            </div>
+
+            <button class="slider-btn next" type="button" aria-label="次へ">›</button>
+          </div>
+
+          <div id="sliderDots" class="slider-dots" aria-label="スライド選択"></div>
+        </section>
+
         <section id="news" class="card">
           <h3>
             お知らせ
@@ -414,6 +430,163 @@
 
   <script src="assets/home-render.js" defer></script>
   <script src="assets/home-news-render.js" defer></script>
+
+  <script>
+  /**
+   * Slideshow (A案: slides.json方式)
+   * - JSにはファイル名を書かない
+   * - PHOTO_DIR（フォルダ）+ slides.json から一覧を取得して表示
+   *
+   * 必要なHTML要素（例）:
+   *  <img id="sliderImg" ...>
+   *  <div id="sliderDots"></div>
+   *  <button class="slider-btn prev">...</button>
+   *  <button class="slider-btn next">...</button>
+   *  <div class="slider-viewport">...</div>
+   */
+
+  (() => {
+    // =========================
+    // 設定
+    // =========================
+    const PHOTO_DIR = "photos/";         // ★写真フォルダ（末尾に /）
+    const LIST_URL  = "data/photo-data.json"; // ★一覧JSON
+    const INTERVAL_MS = 5000;                  // 自動送り間隔
+    const PAUSE_ON_HOVER = true;               // hoverで停止
+    const HIDE_ON_ERROR = false;               // JSON読めない等のときスライド全体を消す
+
+    // =========================
+    // DOM取得
+    // =========================
+    const root = document.getElementById("slideshow"); // <section id="slideshow"> を想定
+    const img = document.getElementById("sliderImg");
+    const dotsWrap = document.getElementById("sliderDots");
+    const prevBtn = document.querySelector("#slideshow .prev");
+    const nextBtn = document.querySelector("#slideshow .next");
+    const viewport = document.querySelector("#slideshow .slider-viewport");
+
+    if (!img || !dotsWrap || !prevBtn || !nextBtn || !viewport) {
+      console.warn("[slideshow] required elements not found.");
+      return;
+    }
+
+    // =========================
+    // 状態
+    // =========================
+    let SLIDES = [];
+    let idx = 0;
+    let timer = null;
+
+    // =========================
+    // ユーティリティ
+    // =========================
+    async function loadSlides() {
+      const res = await fetch(LIST_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(`[slideshow] slides.json fetch failed: ${res.status}`);
+
+      const data = await res.json();
+      const slides = Array.isArray(data?.slides) ? data.slides : [];
+
+      // {src:"01.jpg", alt:"..."} の src はフォルダ相対のファイル名だけ想定
+      SLIDES = slides
+        .filter(s => s && typeof s.src === "string" && s.src.trim() !== "")
+        .map(s => ({
+          src: PHOTO_DIR + s.src,
+          alt: typeof s.alt === "string" ? s.alt : ""
+        }));
+    }
+
+    function clearDots() {
+      dotsWrap.innerHTML = "";
+    }
+
+    function renderDots() {
+      clearDots();
+      SLIDES.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", `スライド ${i + 1}`);
+        if (i === idx) b.classList.add("is-active");
+        b.addEventListener("click", () => show(i, true));
+        dotsWrap.appendChild(b);
+      });
+    }
+
+    function show(i, userAction = false) {
+      if (!SLIDES.length) return;
+
+      idx = (i + SLIDES.length) % SLIDES.length;
+
+      // 画像切り替え
+      img.src = SLIDES[idx].src;
+      img.alt = SLIDES[idx].alt || "";
+
+      // ドット更新
+      renderDots();
+
+      // ユーザー操作で触ったらタイマーをリセット
+      if (userAction) restart();
+    }
+
+    function start() {
+      if (timer || SLIDES.length <= 1) return;
+      timer = setInterval(() => show(idx + 1), INTERVAL_MS);
+    }
+
+    function stop() {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function restart() {
+      stop();
+      start();
+    }
+
+    // =========================
+    // イベント
+    // =========================
+    prevBtn.addEventListener("click", () => show(idx - 1, true));
+    nextBtn.addEventListener("click", () => show(idx + 1, true));
+
+    // キーボード操作（任意）
+    viewport.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(idx - 1, true);
+      if (e.key === "ArrowRight") show(idx + 1, true);
+    });
+    viewport.setAttribute("tabindex", "0"); // フォーカス可能に
+
+    if (PAUSE_ON_HOVER) {
+      viewport.addEventListener("mouseenter", stop);
+      viewport.addEventListener("mouseleave", start);
+      // モバイルでタップ中停止にしたい場合はここに touchstart/touchend を追加可
+    }
+
+    // =========================
+    // 初期化
+    // =========================
+    (async () => {
+      try {
+        await loadSlides();
+
+        if (!SLIDES.length) {
+          console.warn("[slideshow] No slides found in slides.json");
+          clearDots();
+          if (HIDE_ON_ERROR && root) root.style.display = "none";
+          return;
+        }
+
+        show(0);
+        start();
+      } catch (e) {
+        console.error(e);
+        clearDots();
+        if (HIDE_ON_ERROR && root) root.style.display = "none";
+      }
+    })();
+  })();
+  </script>
 
 </body>
 </html>

@@ -769,3 +769,63 @@ section[id]{ scroll-margin-top: 14px; }
   color: #b45309;
   font-weight: 700;   /* ← 追加（太字） */
 }
+
+/* ===== Slideshow ===== */
+#slideshow .slider{
+  position: relative;
+  margin-top: 10px;
+}
+
+#slideshow .slider-viewport{
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* 画像エリア比率：必要なら 4/3 等に */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+#slideshow .slider-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#slideshow .slider-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.85);
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+
+#slideshow .slider-btn.prev{ left: 10px; }
+#slideshow .slider-btn.next{ right: 10px; }
+
+#slideshow .slider-dots{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#slideshow .slider-dots button{
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(0,0,0,.18);
+  cursor: pointer;
+}
+
+#slideshow .slider-dots button.is-active{
+  background: rgba(0,0,0,.55);
+}
