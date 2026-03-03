@@ -829,3 +829,37 @@ section[id]{ scroll-margin-top: 14px; }
 #slideshow .slider-dots button.is-active{
   background: rgba(0,0,0,.55);
 }
+
+/* ===== Slideshow: GitHub Pagesでも崩れないように強制 ===== */
+#slideshow .slider{
+  width: 100%;
+}
+
+#slideshow .slider-viewport{
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;     /* 枠の縦横比で高さを決める */
+  max-height: 460px;        /* ★大きくなりすぎ防止（好みで調整） */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f3f4f6;
+  position: relative;
+}
+
+/* 画像を枠内に収める（元サイズで暴れないように） */
+#slideshow .slider-viewport img,
+#slideshow .slider-img{
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block;
+  object-fit: contain;        /* 枠いっぱいに表示（切り抜きOKならcover） */
+}
+
+/* スマホ/狭い画面では高さを抑える */
+@media (max-width: 900px){
+  #slideshow .slider-viewport{
+    max-height: 360px;
+  }
+}
