@@ -10,8 +10,9 @@
           "url": "tournament/20260301.html",
           "updated": "2026-02-20",
           "rows": [
-            { "key": "期日", "value": "2026年3月1日（日）" },
-            { "key": "会場", "value": "◯◯体育館" }
+            { "key": "期 日：", "value": "2026年3月1日（日）" },
+            { "key": "主 管：", "value": "北海道教職員連盟、札幌地区協会" },
+            { "key": "会 場：", "value": "◯◯体育館" }
           ],
           "files": [
             { "label": "要項（PDF）", "url": "pdf/2026/20260301_guideline.pdf" },
@@ -27,8 +28,9 @@
           "url": "tournament/20260215.html",
           "updated": "2026-01-30",
           "rows": [
-            { "key": "期日", "value": "2026年2月15日（日）" },
-            { "key": "会場", "value": "◯◯アリーナ" }
+            { "key": "期 日", "value": "2026年2月15日（日）" },
+            { "key": "主 管：", "value": "北海道教職員連盟、札幌地区協会" },
+            { "key": "会 場", "value": "◯◯アリーナ" }
           ],
           "files": [
             { "label": "要項（PDF）", "url": "pdf/2026/20260215_guideline.pdf" },
@@ -43,8 +45,9 @@
           "url": "tournament/20260215.html",
           "updated": "2026-01-20",
           "rows": [
-            { "key": "期日", "value": "2026年2月15日（日）" },
-            { "key": "会場", "value": "◯◯アリーナ" }
+            { "key": "期 日", "value": "2026年2月15日（日）" },
+            { "key": "主 管：", "value": "北海道教職員連盟、札幌地区協会" },
+            { "key": "会 場", "value": "◯◯アリーナ" }
           ],
           "files": [
             { "label": "要項（PDF）", "url": "pdf/2026/20260215_guideline.pdf" },
@@ -59,8 +62,9 @@
           "url": "tournament/20260215.html",
           "updated": "2026-01-10",
           "rows": [
-            { "key": "期日", "value": "2026年2月15日（日）" },
-            { "key": "会場", "value": "◯◯アリーナ" }
+            { "key": "期 日", "value": "2026年2月15日（日）" },
+            { "key": "主 管：", "value": "北海道教職員連盟、札幌地区協会" },
+            { "key": "会 場", "value": "◯◯アリーナ" }
           ],
           "files": [
             { "label": "要項（PDF）", "url": "pdf/2026/20260215_guideline.pdf" },

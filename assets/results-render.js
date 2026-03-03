@@ -152,24 +152,23 @@
         }
 
         if (docs.length) {
-          const actions = el("div", { class: "value actions" });
           for (const d of docs) {
             const info = iconTypeToClass(d?.type);
-            actions.appendChild(
+            const oneAction = el("div", { class: "value actions" }, [
               el("a", { class: "doc", href: d?.url || "#", target: "_blank", rel: "noopener" }, [
                 el("span", { class: `icon ${info.cls}`, text: info.text }),
-                el("span", { text: d?.label || "資料" })
+                el("span", { text: d?.label || "PDF" })
+              ])
+            ]);
+
+            body.appendChild(
+              el("div", { class: "line" }, [
+                el("div", { class: "label", text: d?.key ?? "要項等：" }),
+                oneAction
               ])
             );
           }
-          body.appendChild(
-            el("div", { class: "line" }, [
-              el("div", { class: "label", text: "資料：" }),
-              actions
-            ])
-          );
         }
-
         listRoot.appendChild(el("article", { class: "entry" }, [head, meta, body]));
       }
     }

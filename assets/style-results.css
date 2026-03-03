@@ -284,7 +284,7 @@ aside.card.right-tab .links a{
   text-decoration: none;
   font-weight: 900;
   color: #0b3b86;
-  font-size: 16px;
+  font-size: 18px;
 }
 .entry-title:hover{ text-decoration: underline; }
 
@@ -501,3 +501,18 @@ aside.card.right-tab .links a{
   display: none !important;
 }
 
+/* ===== RESULTS：タイトルをリンクではなく“文字”として扱う ===== */
+:root{
+  --results-entry-title-color: #0b3b86; /* ← 後でここを好きな色に */
+}
+
+.content a.entry-title{
+  pointer-events: none;
+  cursor: default;
+  color: var(--results-entry-title-color);
+  text-decoration: none;
+}
+
+.content a.entry-title:hover{
+  text-decoration: none;
+}

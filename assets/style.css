@@ -732,3 +732,40 @@ section[id]{ scroll-margin-top: 14px; }
   text-decoration: none !important;
   pointer-events: none; /* クリック不可にしたい場合（不要なら消してOK） */
 }
+
+/* ===== Home：タイトルをリンクではなく“文字”として扱う ===== */
+:root{
+  --home-news-title-color: var(--text);   /* ← 後でここを好きな色に */
+  --home-taikai-title-color: var(--text); /* ← 後でここを好きな色に */
+}
+
+/* お知らせ：タイトル（.news-simple-title）だけクリック不可＆下線なし */
+#homeNewsList a.news-simple-title{
+  pointer-events: none;       /* クリック無効 = 実質リンクなし */
+  cursor: default;
+  color: var(--home-news-title-color);
+  text-decoration: none;
+}
+#homeNewsList a.news-simple-title:hover{
+  text-decoration: none;
+}
+
+/* 大会情報：大会タイトル（a.title を想定）だけクリック不可＆下線なし
+   ※PDF（.home-doc-pdf 等）は触らないのでリンクのまま残ります */
+#homeTaikaiList a.title{
+  pointer-events: none;
+  cursor: default;
+  color: var(--home-taikai-title-color);
+  text-decoration: none;
+}
+#homeTaikaiList a.title:hover{
+  text-decoration: none;
+}
+
+/* 大会情報のNEWタグを、お知らせのNEWタグと同じ色にする */
+#homeTaikaiList .badge{
+  border: 1px solid rgba(180,83,9,.35);
+  background: rgba(180,83,9,.08);
+  color: #b45309;
+  font-weight: 700;   /* ← 追加（太字） */
+}

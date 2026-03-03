@@ -606,13 +606,13 @@ aside.card.right-tab h3{
 /* 既存の .row レイアウトではなく .line を使うため、こちらを優先 */
 .entry-body.entry-lines{
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 /* 「ラベル（左） : 値（右）」を2カラムに */
 .entry-lines .line{
   display: grid;
-  grid-template-columns: 120px 1fr; /* ←「要項等：」が入る幅 */
+  grid-template-columns: 120px 90fr; /* ←「要項等：」が入る幅 */
   gap: 10px;
   align-items: start;
 }
@@ -640,7 +640,7 @@ aside.card.right-tab h3{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 10px;
+  padding: 6px 8px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #fff;
@@ -679,4 +679,79 @@ aside.card.right-tab h3{
   .entry-lines .label{
     padding-top: 2px;
   }
+}
+
+/* ===== TAIKAI：大会名を“文字”見た目に統一（aでもspanでも効く） ===== */
+:root{
+  --taikai-entry-title-color: var(--text); /* ← 後でここを好きな色に */
+}
+
+/* 大会名（リンクっぽい青/下線を消す） */
+.content .entry-title{
+  color: var(--taikai-entry-title-color);
+  text-decoration: none;
+  cursor: default;
+}
+.content .entry-title:hover{
+  text-decoration: none;
+}
+
+/* もし a だった場合はクリックも無効化 */
+.content a.entry-title{
+  pointer-events: none;
+}
+
+/* =========================================================
+   TAIKAI：カードUIを「お知らせ」寄せ
+   - タイトル：リンクっぽさを消す（aでもspanでも効く）
+   - ボタン：見た目は大会情報寄せ（赤PDFアイコン維持）
+            ただし高さはお知らせ寄せ（薄め）
+   ========================================================= */
+
+/* 後で色だけ変えられるように変数化 */
+:root{
+  --taikai-title-color: #0b3b86;   /* お知らせ寄せの濃い青（後で変更OK） */
+  --taikai-meta-color: var(--text);
+  --taikai-doc-height: 30px;      /* ← 縦幅をお知らせ寄せに（必要なら 28〜32pxで調整） */
+}
+
+/* タイトル（aでもspanでも同じ見た目にする） */
+.content .entry-title{
+  color: var(--taikai-title-color);
+  font-size: 19px;               /* お知らせ寄せ */
+  font-weight: 900;
+  text-decoration: none;
+  cursor: default;
+
+  /* お知らせ寄せ：長い場合は1行省略 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content .entry-title:hover{
+  text-decoration: none;
+}
+
+/* もし a ならクリックも無効化（＝押せない） */
+.content a.entry-title{
+  pointer-events: none;
+}
+
+/* 更新日などのメタ情報（お知らせ寄せで濃く） */
+.content .entry-meta{
+  color: var(--taikai-meta-color);
+}
+
+/* docボタン：見た目は大会情報寄せのまま、縦幅だけお知らせ寄せに薄くする */
+.entry-lines .doc{
+  padding: 0 10px;               /* 縦paddingを消して薄く */
+  min-height: var(--taikai-doc-height);
+  border-radius: 10px;           /* 大会情報寄せ */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* アイコンが高すぎる場合だけ微調整（基本はこのままでOK） */
+.entry-lines .icon{
+  height: calc(var(--taikai-doc-height) - 8px);
 }

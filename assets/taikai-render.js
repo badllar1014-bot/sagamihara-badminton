@@ -130,10 +130,10 @@
     }
 
     const fileLines =
-      buildGroupLine("要項等：", groups.guideline) +
+      buildGroupLine("要 項：", groups.guideline) +
       buildGroupLine("参加申込：", groups.entry) +
       buildGroupLine("組合せ等：", groups.draw) +
-      buildGroupLine("結果等：", groups.result);
+      buildGroupLine("結 果：", groups.result);
 
     return `
       <article class="entry" data-updated="${escapeHtml(e.updated || "")}">
