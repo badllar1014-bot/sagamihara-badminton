@@ -1,5 +1,5 @@
 /* =========================================================
-   assets/style-taikai.css
+   assets/style-taikai-info.css
    ※assets/style.css（index.htmlと同じ）を先に読み込む前提
    ========================================================= */
 
@@ -567,8 +567,8 @@ aside.card.right-tab h3{
   background: rgba(0,0,0,.22);                 /* 少し濃く */
   box-shadow: inset 0 -4px 0 rgba(255,255,255,.55); /* 下線っぽく */
   font-weight: 900;                             /* 太字（1400は効かない環境あり） */
-  cursor: default;
-  pointer-events: none;                         /* クリック不可（連打防止） */
+  cursor: pointer;
+  pointer-events: auto;                         /* クリック不可（連打防止） */
   opacity: 1;
 }
 
@@ -754,4 +754,27 @@ aside.card.right-tab h3{
 /* アイコンが高すぎる場合だけ微調整（基本はこのままでOK） */
 .entry-lines .icon{
   height: calc(var(--taikai-doc-height) - 8px);
+}
+
+.schedule-actions{
+  margin: 10px 0 0;
+}
+
+.doc-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 0;
+  height: 30px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(11,122,58,.06);
+  font-weight: 900;
+  color: #0b3b86;
+  text-decoration: none;
+}
+
+.doc-btn:hover{
+  background: rgba(11,122,58,.12);
 }
