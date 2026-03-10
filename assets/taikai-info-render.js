@@ -4,16 +4,15 @@
  * - NEW if updated is within 14 days from today (today = day 0)
  */
 (function(){
-  const DATA_URL = "data/taikai-data.json";
+  const DATA_URL = "data/taikai-info-data.json";
   const MS_PER_DAY = 24 * 60 * 60 * 1000;
   const NEW_DAYS = 14; // ★ここが「14日」
 
   function escapeHtml(s){
     return String(s ?? "")
       .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
-      .replaceAll('"',"&quot;").replaceAll("'","&#39;")
-      .replace(/&lt;br\s*\/?&gt;/gi, "<br>");
-    }
+      .replaceAll('"',"&quot;").replaceAll("'","&#39;");
+  }
 
   function parseYmdLocal(ymd){
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(ymd || "");
@@ -131,10 +130,10 @@
     }
 
     const fileLines =
-      buildGroupLine("要　項：", groups.guideline) +
+      buildGroupLine("要 項：", groups.guideline) +
       buildGroupLine("参加申込：", groups.entry) +
       buildGroupLine("組合せ等：", groups.draw) +
-      buildGroupLine("結　果：", groups.result);
+      buildGroupLine("結 果：", groups.result);
 
     return `
       <article class="entry" data-updated="${escapeHtml(e.updated || "")}">
@@ -171,14 +170,7 @@
       if(!sec) return;
 
       sec.innerHTML = `<div class="section-bar"></div>`;
-
-      const sortedEntries = [...(y.entries || [])].sort((a, b) => {
-        const aNum = Number(String(a.id || "").split("-")[1] || 0);
-        const bNum = Number(String(b.id || "").split("-")[1] || 0);
-        return bNum - aNum; // 降順（新しいものが上）
-      });
-
-      sortedEntries.forEach(e => {
+      (y.entries || []).forEach(e => {
         sec.insertAdjacentHTML("beforeend", buildEntry(e));
       });
     });

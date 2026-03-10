@@ -172,7 +172,7 @@
 .entry-meta,
 .note,
 .file{
-  font-size: 12px;
+  font-size: 13px;
 }
 
 
@@ -316,11 +316,28 @@ aside.card.right-tab h3{
 .entry-title{
   text-decoration: none;
   font-weight: 900;
-  color: #0b3b86;
-  font-size: 19px;
+  color: #1d4ed8;
+  font-size: 20px;
 }
 
 .entry-title:hover{ text-decoration: underline; }
+
+/* ===== 大会情報：entryに左アクセントライン（お知らせと同じ） ===== */
+.content .entry{
+  position: relative;
+  padding-left: 16px;                 /* ライン分の左余白 */
+}
+
+.content .entry::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  background: rgba(11,122,58,.45);    /* お知らせと同じ緑 */
+  border-radius: 6px;
+}
 
 .tag{
   font-size: 12px;
@@ -345,15 +362,14 @@ aside.card.right-tab h3{
 
 .entry-meta{
   margin-top: 8px;
-  color: var(--text);
-  text-align: right;      
+  color: var(--muted);
 }
 
 .row{
   display: grid;
   grid-template-columns: 72px 1fr;
   gap: 10px;
-  padding: 2px 0;
+  padding: 5px 0;
 }
 
 .k{ font-weight: 900; }
@@ -561,298 +577,181 @@ aside.card.right-tab h3{
   background: rgba(0,0,0,.22);
 }
 
-/* ===== entryに左アクセントライン（区切りが強くなる） ===== */
-.content .entry{
-  margin: 16px 0;                         /* カード間の余白を増やす */
-  border: 1px solid rgba(15,23,42,.14);   /* 境界線を少し濃く */
-  position: relative;
-  padding-left: 16px;                      /* ライン分だけ左に余白 */
-  box-shadow: 0 8px 18px rgba(15,23,42,.06); /* 影を少しだけ強める */
-}
-
-.content .entry::before{
-  content:"";
-  position:absolute;
-  left: 0;
-  top: 14px;
-  bottom: 14px;
-  width: 4px;
-  background: rgba(11,122,58,.45);
-  border-radius: 6px;
-}
-
-/* ===== タイトル行：横並び＋下線を枠いっぱい ===== */
-.entry-head{
+/* ===== 大会カード：タイトル下に下線 ===== */
+.content .entry-head{
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: nowrap;                 /* タグをタイトル横に固定（改行させない） */
+  flex-wrap: nowrap;
   padding-bottom: 10px;
   margin-bottom: 10px;
-  border-bottom: 1px solid rgba(11,122,58,.22); /* 枠いっぱいの線 */
+  border-bottom: 1px solid rgba(11,122,58,.22); /* ← 下線 */
 }
 
-/* タイトルは残り幅を使う（長い場合は省略） */
-.entry-title{
-  flex: 1 1 auto;
-  min-width: 0;                      /* 省略を効かせるため必須 */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  text-decoration: none;             /* 既存リンク下線を消す */
-  font-weight: 900;
+/* NEWタグは右端に */
+.content .entry-head .tag{
+  margin-left: auto;
 }
 
-/* タグは右に寄せて固定 */
-.entry-head .tag{
-  flex: 0 0 auto;
-  margin-left: auto;                /* タイトルの右端へ */
+/* ===== 更新日：右寄せ ===== */
+.content .entry-meta{
+  text-align: right;
 }
 
-/* 画像の「項目：値」行レイアウト */
-.entry-lines{
+/* =========================================================
+   9) entry-lines（JS生成の「期日/会場/要項等…」を横並びにする）
+   追加：taikai-render.js の出力に合わせる
+   ========================================================= */
+
+/* 既存の .row レイアウトではなく .line を使うため、こちらを優先 */
+.entry-body.entry-lines{
   display: grid;
   gap: 4px;
 }
 
+/* 「ラベル（左） : 値（右）」を2カラムに */
 .entry-lines .line{
   display: grid;
-  grid-template-columns: 120px .90fr; /* 左ラベル幅 */
+  grid-template-columns: 120px 90fr; /* ←「要項等：」が入る幅 */
   gap: 10px;
   align-items: start;
 }
 
+/* 左ラベル */
 .entry-lines .label{
   font-weight: 900;
   white-space: nowrap;
 }
 
+/* 右の値 */
 .entry-lines .value{
-  min-width: 0; /* 折り返し用 */
+  min-width: 0;
 }
 
-/* ボタン群 */
-.entry-lines .actions{
+/* 複数ボタンが並ぶ行（要項等/組合せ等…） */
+.entry-lines .value.actions{
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 8px;
 }
 
-/* 「PDF 要項」みたいなボタン */
-.doc{
+/* docボタンが“青リンク文字だけ”に見える場合の保険（style-news.css未読み込みでも最低限整う） */
+.entry-lines .doc{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0px 8px;
+  padding: 6px 8px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 10px;
   background: #fff;
   text-decoration: none;
   font-weight: 900;
   color: #0b3b86;
 }
 
-.doc:hover{
+.entry-lines .doc:hover{
   background: rgba(11,122,58,.08);
 }
 
-/* アイコン（PDF/Excel） */
-.icon{
+/* PDF / X アイコン（赤/緑） */
+.entry-lines .icon{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 28px;
   height: 22px;
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 12px;
   font-weight: 900;
   color: #fff;
   flex: 0 0 auto;
 }
 
-.icon.pdf{ background: #d40000; }    /* 赤 */
-.icon.xls{ background: #0f8a3a; }    /* 緑 */
+.entry-lines .icon.pdf{ background: #d40000; } /* 赤 */
+.entry-lines .icon.xls{ background: #0f8a3a; } /* 緑 */
 
-/* スマホは縦積みに */
+/* スマホは縦積み */
 @media (max-width: 720px){
   .entry-lines .line{
     grid-template-columns: 1fr;
     gap: 6px;
   }
-}
-
-.news-controls{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin: 10px 0 14px;
-  flex-wrap: wrap;
-}
-
-.news-sort{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.news-sort select{
-  padding: 8px 10px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background:#fff;
-  font-weight: 900;
-}
-
-.news-pager{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.pager-btn{
-  appearance:none;
-  border: 1px solid var(--line);
-  background:#fff;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-weight: 900;
-  cursor:pointer;
-}
-
-.pager-btn:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-}
-
-.page-info{
-  font-weight: 900;
-  font-size: 13px;
-}
-
-.news-controls--bottom{
-  margin-top: 18px;
-}
-
-.news-controls{
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* 左=並べ替え / 右=ページャー */
-  gap: 12px;
-  margin: 10px 0 14px;
-}
-
-.news-sort{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.news-pager-bottom{
-  margin-left: auto;              /* 念押しで右寄せ */
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.page-info{
-  min-width: 64px;
-  text-align: center;
-}
-
-@media (max-width: 720px){
-  .news-controls{
-    flex-wrap: wrap;
-  }
-  .news-pager-bottom{
-    width: 100%;
-    justify-content: flex-end;
+  .entry-lines .label{
+    padding-top: 2px;
   }
 }
 
-/* 下側ページャーを右寄せ */
-.news-pager-bottom{
-  display: flex;
-  justify-content: flex-end; /* 右寄せ */
-  align-items: center;
-  gap: 12px;                 /* ボタン間の余白 */
-  margin-top: 14px;          /* 上との間隔（任意） */
-}
-
-/* もし 右端にピッタリ過ぎる場合 */
-.news-pager-bottom{
-  padding-right: 6px;        /* 任意 */
-}
-
-/* ===== NEWS：タイトルをリンクではなく“文字”として扱う ===== */
+/* ===== TAIKAI：大会名を“文字”見た目に統一（aでもspanでも効く） ===== */
 :root{
-  --news-entry-title-color: #0b3b86; /* ← 後でここを好きな色に */
+  --taikai-entry-title-color: var(--text); /* ← 後でここを好きな色に */
 }
 
-.content a.entry-title{
-  pointer-events: none;  /* クリック無効 */
+/* 大会名（リンクっぽい青/下線を消す） */
+.content .entry-title{
+  color: var(--taikai-entry-title-color);
+  text-decoration: none;
   cursor: default;
-  color: var(--news-entry-title-color);
+}
+.content .entry-title:hover{
   text-decoration: none;
 }
 
-.content a.entry-title:hover{
-  text-decoration: none;
+/* もし a だった場合はクリックも無効化 */
+.content a.entry-title{
+  pointer-events: none;
 }
 
 /* =========================================================
-   NEWS：ボタンUIを大会情報（.doc / .icon）と同一にする
+   TAIKAI：カードUIを「お知らせ」寄せ
+   - タイトル：リンクっぽさを消す（aでもspanでも効く）
+   - ボタン：見た目は大会情報寄せ（赤PDFアイコン維持）
+            ただし高さはお知らせ寄せ（薄め）
    ========================================================= */
 
-/* ボタン群の並び（大会情報寄せ） */
-.content .entry-lines .actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
+/* 後で色だけ変えられるように変数化 */
+:root{
+  --taikai-title-color: #0b3b86;   /* お知らせ寄せの濃い青（後で変更OK） */
+  --taikai-meta-color: var(--text);
+  --taikai-doc-height: 30px;      /* ← 縦幅をお知らせ寄せに（必要なら 28〜32pxで調整） */
 }
 
-/* 「PDF 要項」ボタン（大会情報寄せ） */
-.content a.doc{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 8px;              /* ←大会情報と同じ */
-  border: 1px solid var(--line);
-  border-radius: 6px;          /* ←角丸を一致（必要なら6pxでもOK） */
-  background: #fff;
+/* タイトル（aでもspanでも同じ見た目にする） */
+.content .entry-title{
+  color: var(--taikai-title-color);
+  font-size: 19px;               /* お知らせ寄せ */
+  font-weight: 900;
   text-decoration: none;
-  font-weight: 900;
-  color: #0b3b86;
-  line-height: 1;
-  min-height: 30px;             /* ←添付2枚目の縦サイズ感に寄せる */
+  cursor: default;
+
+  /* お知らせ寄せ：長い場合は1行省略 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content .entry-title:hover{
+  text-decoration: none;
 }
 
-.content a.doc:hover{
-  background: rgba(11,122,58,.08);
+/* もし a ならクリックも無効化（＝押せない） */
+.content a.entry-title{
+  pointer-events: none;
 }
 
-/* 左のアイコン（PDF/Excel等） */
-.content .doc .icon{
+/* 更新日などのメタ情報（お知らせ寄せで濃く） */
+.content .entry-meta{
+  color: var(--taikai-meta-color);
+}
+
+/* docボタン：見た目は大会情報寄せのまま、縦幅だけお知らせ寄せに薄くする */
+.entry-lines .doc{
+  padding: 0 10px;               /* 縦paddingを消して薄く */
+  min-height: var(--taikai-doc-height);
+  border-radius: 10px;           /* 大会情報寄せ */
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 22px;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: 900;
-  color: #fff;
-  flex: 0 0 auto;
 }
 
-/* PDFは赤（大会情報と同じ） */
-.content .doc .icon.pdf{ background: #d40000; }
-
-/* もしExcel等があるなら緑 */
-.content .doc .icon.xls{ background: #0f8a3a; }
-
-/* 「X 参加申込」みたいな外部リンク系も同じ箱に入れる場合の例 */
-.content .doc .icon.x{ background: #111827; }
+/* アイコンが高すぎる場合だけ微調整（基本はこのままでOK） */
+.entry-lines .icon{
+  height: calc(var(--taikai-doc-height) - 8px);
+}

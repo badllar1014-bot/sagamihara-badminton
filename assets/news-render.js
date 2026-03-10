@@ -48,40 +48,86 @@
       .replaceAll('"',"&quot;").replaceAll("'","&#39;");
   }
 
+  function buildBodyHtml(body){
+    const arr = Array.isArray(body) ? body : [];
+    return arr
+      .map(text => String(text || "").trim())
+      .filter(Boolean)
+      .map(text => `<p class="news-body-text">${escapeHtml(text)}</p>`)
+      .join("");
+  }
+
+  function buildDocLink(action){
+    const raw = (action?.label || "").trim();          // 例: "PDF 要項" / "X 参加申込"
+    const first = raw.split(/\s+/)[0];                // "PDF" or "X"
+    const rest = raw.replace(/^(\S+)\s*/, "");         // "要項" / "参加申込"
+
+    const type = first.toLowerCase();                  // pdf / x / xlsx...
+    const iconText = first;                            // 表示文字（PDF/X）
+    const iconCls =
+      type === "pdf" ? "pdf" :
+      (type === "xls" || type === "xlsx") ? "xls" :
+      type === "x" ? "x" : "pdf";
+
+    const a = document.createElement("a");
+    a.className = "doc";
+    a.href = action?.url || "#";
+    if (action?.target) a.target = action.target;
+    if (a.target === "_blank") a.rel = "noopener noreferrer";
+
+    const icon = document.createElement("span");
+    icon.className = `icon ${iconCls}`;
+    icon.textContent = iconText;
+
+    const text = document.createElement("span");
+    text.textContent = rest || raw;                    // 万一分割できない場合の保険
+
+    a.appendChild(icon);
+    a.appendChild(text);
+    return a;
+  }
+
   function buildEntry(item){
     const updatedJP = formatJP(item.updated);
     const d = diffDaysFromToday(item.updated);
     const showNew = (d !== null && d >= 0 && d <= NEW_DAYS);
 
     // lines -> render
+    const bodyHtml = buildBodyHtml(item.body);
     const linesHtml = (item.lines || []).map(line => {
       const actions = (line.actions || [])
         .filter(a => a.url)
-        .map(a => {
-          // If your HTML uses PDF/XLS icons, customize here. For now: plain button style.
-          const label = escapeHtml(a.label || "リンク");
-          const url = escapeHtml(a.url);
-          const target = a.target ? ` target="${escapeHtml(a.target)}" rel="noopener"` : "";
-          return `<a class="doc" href="${url}"${target}>${label}</a>`;
-        }).join("");
-      const value = actions ? actions : escapeHtml(line.text || "");
+        .map(a => buildDocLink(a).outerHTML)
+        .join("");
+
+      const textHtml = escapeHtml(line.text || "");
+      const valueHtml = actions
+        ? (textHtml ? `${textHtml} ${actions}` : actions)
+        : textHtml;
+
       return `
         <div class="line">
           <div class="label">${escapeHtml(line.label || "")}</div>
-          <div class="value actions">${value}</div>
+          <div class="value actions">${valueHtml}</div>
         </div>
       `;
     }).join("");
 
     const tagHtml = showNew ? `<span class="tag new">NEW</span>` : "";
 
+    const titleUrl = String(item.url || "").trim();
+    const titleHtml = titleUrl
+      ? `<a class="entry-title" href="${escapeHtml(titleUrl)}">${escapeHtml(item.title || "")}</a>`
+      : `<span class="entry-title no-link">${escapeHtml(item.title || "")}</span>`;
+
     return `
       <article class="entry" data-updated="${escapeHtml(item.updated || "")}">
         <div class="entry-head">
-          <a class="entry-title" href="${escapeHtml(item.url || "#")}">${escapeHtml(item.title || "")}</a>
+          ${titleHtml}
           ${tagHtml}
         </div>
         <div class="entry-meta">更新日：${escapeHtml(updatedJP)}</div>
+        ${bodyHtml ? `<div class="entry-body news-body">${bodyHtml}</div>` : ""}
         <div class="entry-body entry-lines">${linesHtml}</div>
       </article>
     `;

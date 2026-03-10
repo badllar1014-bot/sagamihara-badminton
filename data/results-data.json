@@ -1,6 +1,6 @@
 {
   "schema": "sagamihara-badminton/results-v1",
-  "generated_at": "2026-02-24T00:00:00+09:00",
+  "generated_at": "2026-03-10T00:00:00+09:00",
   "categories": [
     {
       "key": "open_team",
@@ -9,34 +9,34 @@
         {
           "entries": [
             {
-              "id": "open_team-2026-001",
-              "updated": "2026-02-20",
-              "title": "（例）相模原オープン大会（団体戦）2026",
-              "url": "results/open_team/2026/20260220.html",
+              "id": "open_team-001",
+              "updated": "2026-03-10",
+              "title": "令和８年度相模原団体戦オープン大会",
+              "url": "parts/相模原オープン団体戦/令和８年度相模原オープン団体戦要項.pdf",
               "lines": [
-                { "label": "期 日：", "value": "令和8年3月10日（土）・11日（日）" },
-                { "label": "主 管：", "value": "相模原市バドミントン協会" },
-                { "label": "会 場：", "value": "（例）相模原市総合体育館" }
+                { "label": "開催日：", "value": "令和8年3月10日（土）・11日（日）" },
+                { "label": "主　管：", "value": "相模原市バドミントン協会" },
+                { "label": "会　場：", "value": "ほねごりアリーナ（北総合体育館）" },
+                { "label": "種　目：", "value": "A級, B級, C級, 壮年40の部, 壮年50の部<br>（女子ダブルス・男子ダブルス・混合ダブルス）" },
+                { "label": "締　切：", "value": "令和8年3月14日(土）～4月17日(金）" }
               ],
               "docs": [
-                { "key": "要 項：",   "type": "pdf", "label": "要項",     "url": "pdf/2026/shimin_single_guideline.pdf" },
-                { "key": "結 果：",   "type": "pdf", "label": "結果",     "url": "pdf/2026/shimin_single_result.pdf" }
+                { "key": "要　項：",   "type": "pdf", "label": "要項", "url": "parts/相模原オープン団体戦/令和８年度相模原オープン団体戦要項.pdf" }
               ]
             },
             {
-              "id": "open_team-2026-002",
-              "updated": "2026-01-20",
-              "title": "（例）相模原オープン大会（団体戦）2025",
-              "url": "results/open_team/2025/20250120.html",
+              "id": "open_team-002",
+              "updated": "2026-03-10",
+              "title": "令和７年度相模原団体戦オープン大会",
+              "url": "parts/相模原オープン団体戦/20250406-3.pdf",
               "lines": [
-                { "label": "期 日：", "value": "令和8年2月1日（日）" },
-                { "label": "会 場：", "value": "（例）○○体育館" }
+                { "label": "開催日：", "value": "令和7年4月6日（日）" },
+                { "label": "主　管：", "value": "相模原市バドミントン協会" },
+                { "label": "会　場：", "value": "ほねごりアリーナ（北総合体育館）" },
+                { "label": "種　目：", "value": "A級, B級, C級, 壮年40の部, 壮年50の部<br>（女子ダブルス・男子ダブルス・混合ダブルス）" }
               ],
               "docs": [
-                { "key": "要 項：",   "type": "pdf", "label": "要項",     "url": "pdf/2026/shimin_single_guideline.pdf" },
-                { "key": "参加申込：", "type": "pdf", "label": "参加申込", "url": "pdf/2026/shimin_single_entry.pdf" },
-                { "key": "組合せ等：", "type": "pdf", "label": "組合せ",   "url": "pdf/2026/shimin_single_draw.pdf" },
-                { "key": "結 果：",   "type": "pdf", "label": "結果",     "url": "pdf/2026/shimin_single_result.pdf" }
+                { "key": "結　果：",   "type": "pdf", "label": "結果", "url": "parts/相模原オープン団体戦/20250406-3.pdf" }
               ]
             }
           ]
@@ -45,52 +45,106 @@
     },
 
     { "key": "shimin_single", "label": "相模原市民バドミントン選手権大会（シングルス）", "years": [
-              {
+        {
           "entries": [
             {
-              "id": "shimin_single-2026-001",
-              "updated": "2026-02-20",
-              "title": "（例）相模原市民バドミントン選手権大会（シングルス）2026",
-              "url": "results/shimin_single/2026/20260220.html",
+              "id": "shimin_single-001",
+              "updated": "2026-03-10",
+              "title": "令和７年度相模原市民バドミントン選手権大会シングルス",
+              "url": "parts/相模原市民選手権シングルス/20250518.pdf",
               "lines": [
-                { "label": "期 日：", "value": "令和8年3月10日（土）・11日（日）" },
-                { "label": "主 管：", "value": "相模原市バドミントン協会" },
-                { "label": "会 場：", "value": "（例）相模原市総合体育館" }
+                { "label": "開催日：", "value": "令和7年5月18日（日）" },
+                { "label": "主　管：", "value": "相模原市バドミントン協会" },
+                { "label": "会　場：", "value": "相模原ギオンアリーナ" }
               ],
               "docs": [
-                { "key": "要 項：",   "type": "pdf", "label": "要項",     "url": "pdf/2026/shimin_single_guideline.pdf" },
-                { "key": "参加申込：", "type": "pdf", "label": "参加申込", "url": "pdf/2026/shimin_single_entry.pdf" },
-                { "key": "組合せ等：", "type": "pdf", "label": "組合せ",   "url": "pdf/2026/shimin_single_draw.pdf" },
-                { "key": "結 果：",   "type": "pdf", "label": "結果",     "url": "pdf/2026/shimin_single_result.pdf" }
-              ]
-            },
-            {
-              "id": "shimin_single-2026-002",
-              "updated": "2026-03-01",
-              "title": "（例）相模原市民バドミントン選手権大会（シングルス）2025",
-              "url": "results/shimin_single/2025/20250120.html",
-              "lines": [
-                { "label": "期　日：", "value": "令和8年2月1日（日）" },
-                { "label": "会　場：", "value": "（例）○○体育館" }
-              ],
-              "docs": [
-                { "key": "要 項：",   "type": "pdf", "label": "要項",     "url": "pdf/2026/shimin_single_guideline.pdf" },
-                { "key": "参加申込：", "type": "pdf", "label": "参加申込", "url": "pdf/2026/shimin_single_entry.pdf" },
-                { "key": "組合せ等：", "type": "pdf", "label": "組合せ",   "url": "pdf/2026/shimin_single_draw.pdf" },
-                { "key": "結 果：",   "type": "pdf", "label": "結果",     "url": "pdf/2026/shimin_single_result.pdf" }
+                { "key": "結　果：", "type": "pdf", "label": "結果", "url": "parts/相模原市民選手権シングルス/20250518.pdf" }
               ]
             }
           ]
         }
     ] },
     { "key": "shimin_double", "label": "相模原市民バドミントン選手権大会（ダブルス）", "years": [] },
-    { "key": "open_ladies", "label": "相模原オープンレディース大会", "years": [] },
-    { "key": "open_jhs_ind", "label": "相模原オープン中学生大会（個人戦）", "years": [] },
-    { "key": "open_jhs_team", "label": "相模原オープン中学生大会（団体戦）", "years": [] },
-    { "key": "open_double", "label": "相模原オープンダブルス大会", "years": [] },
-    { "key": "age_mix", "label": "相模原年齢別ﾐｯｸｽ大会", "years": [] },
-    { "key": "open_elem", "label": "相模原オープン小学生大会", "years": [] },
-    { "key": "sogo_single", "label": "相模原市総合選手権大会（シングルス）", "years": [] },
+    { "key": "open_double", "label": "相模原オープンダブルス大会", "years": [
+        {
+          "entries": [
+            {
+              "id": "open_double-001",
+              "updated": "2026-03-10",
+              "title": "令和７年度相模原オープンダブルス大会",
+              "url": "parts/相模原オープンダブルス/20251012.pdf",
+              "lines": [
+                { "label": "開催日：", "value": "令和7年10月12日（日）" },
+                { "label": "主　管：", "value": "相模原市バドミントン協会" },
+                { "label": "会　場：", "value": "ほねごりアリーナ（北総合体育館）" }
+              ],
+              "docs": [
+                { "key": "結　果：", "type": "pdf", "label": "結果", "url": "parts/相模原オープンダブルス/20251012.pdf" }
+              ]
+            }
+          ]
+        }
+    ] },
+    { "key": "age_mix", "label": "相模原年齢別ﾐｯｸｽ大会", "years": [
+        {
+          "entries": [
+            {
+              "id": "age_mix-001",
+              "updated": "2026-03-10",
+              "title": "令和７年度相模原年齢別ﾐｯｸｽ大会",
+              "url": "parts/年齢別ミックス/20251103.pdf",
+              "lines": [
+                { "label": "開催日：", "value": "令和7年11月3日（月）" },
+                { "label": "主　管：", "value": "相模原市バドミントン協会" },
+                { "label": "会　場：", "value": "相模原ギオンアリーナ" }
+              ],
+              "docs": [
+                { "key": "結　果：", "type": "pdf", "label": "結果", "url": "parts/年齢別ミックス/20251103.pdf" }
+              ]
+            }
+          ]
+        }
+    ] },
+    { "key": "open_elem", "label": "相模原オープン小学生大会", "years": [
+        {
+          "entries": [
+            {
+              "id": "open_elem-001",
+              "updated": "2026-03-10",
+              "title": "令和７年度相模原オープン小学生大会",
+              "url": "parts/相模原オープン小学生/20251227.pdf",
+              "lines": [
+                { "label": "開催日：", "value": "令和7年12月27日（土）" },
+                { "label": "主　管：", "value": "相模原市バドミントン協会" },
+                { "label": "会　場：", "value": "相模原ギオンアリーナ" }
+              ],
+              "docs": [
+                { "key": "結　果：", "type": "pdf", "label": "結果", "url": "parts/相模原オープン小学生/20251227.pdf" }
+              ]
+            }
+          ]
+        }
+    ] },
+    { "key": "sogo_single", "label": "相模原市総合選手権大会（シングルス）", "years": [
+        {
+          "entries": [
+            {
+              "id": "sogo_single-001",
+              "updated": "2026-03-10",
+              "title": "令和７年度相模原市総合選手権大会（シングルス）",
+              "url": "parts/相模原市総合選手権大会シングルス/20260125.pdf",
+              "lines": [
+                { "label": "開催日：", "value": "令和8年1月25日（日）" },
+                { "label": "主　管：", "value": "相模原市バドミントン協会" },
+                { "label": "会　場：", "value": "ほねごりアリーナ（北総合体育館）" }
+              ],
+              "docs": [
+                { "key": "結　果：", "type": "pdf", "label": "結果", "url": "parts/相模原市総合選手権大会シングルス/20260125.pdf" }
+              ]
+            }
+          ]
+        }
+    ] },
     { "key": "sogo_double", "label": "相模原市総合選手権大会（ダブルス）", "years": [] }
   ]
 }

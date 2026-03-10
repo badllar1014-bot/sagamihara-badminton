@@ -1,0 +1,46 @@
+{
+  "years": [
+    {
+    },
+    {
+      "id": "y2025",
+      "label": "2025年度",
+      "entries": [
+        {
+          "id": "y2025-001",
+          "title": "令和７年度第39回協会対抗バドミントン大会",
+          "url": "https://www.badminton-kk.org/pjplan/2025/20250830/20250830index.htm",
+          "updated": "2026-03-10",
+          "rows": [
+            { "key": "開催日：", "value": "2025年8月30日（土）" },
+            { "key": "主  管：", "value": "神奈川県バドミントン協会、藤沢市バドミントン協会" },
+            { "key": "会  場：", "value": "県立スポーツセンターアリーナ２" }
+          ],
+          "files": [
+            { "label": "要項（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20250830yk.pdf" },
+            { "label": "組合せ（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20250830kum.pdf" },
+            { "label": "タイムテーブル（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20250830prg.pdf" },
+            { "label": "結果（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20250830/20250830index.htm" }
+          ]
+        },
+        {
+          "id": "y2025-002",
+          "title": "令和7年度協会対抗年齢別交流大会",
+          "url": "https://www.badminton-kk.org/pjplan/2025/20260117/20260117index.htm",
+          "updated": "2026-03-10",
+          "rows": [
+            { "key": "開催日：", "value": "2026年2月15日（日）" },
+            { "key": "主  管：", "value": "神奈川県バドミントン協会、小田原バドミントン協会" },
+            { "key": "会  場：", "value": "小田原アリーナ" }
+          ],
+          "files": [
+            { "label": "要項（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20260117yk.pdf" },
+            { "label": "組合せ（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20260117kum.pdf" },
+            { "label": "タイムテーブル（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20260117prg.pdf" },
+            { "label": "結果（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20260117/20260117index.htm" }
+          ]
+        }
+      ]
+    }
+  ]
+}
