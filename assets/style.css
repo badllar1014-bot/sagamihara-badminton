@@ -504,7 +504,7 @@ section[id]{ scroll-margin-top: 14px; }
 }
 
 .news-simple-date{
-  font-weight: 500;
+  font-weight: 400;
   font-size: 13px;
   color: var(--text);
   white-space: nowrap;
@@ -722,7 +722,7 @@ section[id]{ scroll-margin-top: 14px; }
 }
 
 .home-doc-label{
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
   text-decoration: none; /* 念押し */
 }

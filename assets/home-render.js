@@ -229,7 +229,6 @@
         // 〜 linkItems.forEach(...) の中身を置き換え
 
         const docsRow = el("div", { class: "home-docs-row" });
-        docsRow.appendChild(el("span", { class: "home-docs-label", text: "資料：" }));
 
         linkItems.forEach((d) => {
           // 1アイテム： 要項： [PDF(link)]
