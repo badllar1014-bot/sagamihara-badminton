@@ -801,6 +801,13 @@ aside.card.right-tab h3{
   letter-spacing: .02em;
 }
 
+.title-divider{
+  height: 6px;
+  background: linear-gradient(90deg, #0b7a3a, #075f2d);
+  border-radius: 999px;
+  margin: 12px 0 14px;
+}
+
 /* 緑の縦線（大会情報方式：top/bottomで揃える） */
 .page-title::before{
   content: "";
@@ -811,4 +818,47 @@ aside.card.right-tab h3{
   width: var(--title-accent-w);
   background: var(--green);
   border-radius: 5px;
+}
+
+html, body{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+.page-inner > *,
+.content > *,
+aside > *{
+  min-width: 0;
+}
+
+@media (max-width: 720px){
+  .mega{
+    overflow-x: hidden;
+  }
+
+  .mega-inner{
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 12px 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .mega-col,
+  .mega-info{
+    min-width: 0;
+    width: 100%;
+  }
+
+  .mega-col ul,
+  .mega-col ul.three{
+    grid-template-columns: 1fr;
+  }
 }

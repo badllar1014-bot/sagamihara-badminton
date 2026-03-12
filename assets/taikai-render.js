@@ -43,13 +43,36 @@
   }
 
   // 拡張子などで PDF / X を判定
-  function detectDocType(url, label){
-    const u = String(url || "");
-    if (/\.(xlsx|xls)$/i.test(u)) return { cls: "xls", icon: "X" };
-    // ラベルにXが入ってるケースの保険
-    if (/^X\b|参加申込/i.test(String(label || "")) && /\.(xlsx|xls)/i.test(u)) {
+  function detectDocType(file){
+    const type = String(file?.type || "").trim().toLowerCase();
+    const url = String(file?.url || "");
+    const label = String(file?.label || "");
+
+    if (type === "pdf") {
+      return { cls: "pdf", icon: "PDF" };
+    }
+
+    if (type === "excel" || type === "xls" || type === "xlsx") {
       return { cls: "xls", icon: "X" };
     }
+
+    if (type === "form") {
+      return { cls: "form", icon: "FORM" };
+    }
+
+    // 互換: type未指定の旧データはURLやラベルから判定
+    if (/\.(xlsx|xls)$/i.test(url)) {
+      return { cls: "xls", icon: "X" };
+    }
+
+    if (/forms\.gle|docs\.google\.com\/forms/i.test(url)) {
+      return { cls: "form", icon: "FORM" };
+    }
+
+    if (/^X\b|参加申込/i.test(label) && /\.(xlsx|xls)/i.test(url)) {
+      return { cls: "xls", icon: "X" };
+    }
+
     return { cls: "pdf", icon: "PDF" };
   }
 
@@ -57,9 +80,8 @@
     const url = f?.url || "#";
     const label = f?.label || "";
     const text = cleanFileLabel(label);
-    const t = detectDocType(url, label);
+    const t = detectDocType(f);
 
-    // style-news.css の .doc / .icon を流用する想定
     return `
       <a class="doc" href="${escapeHtml(url)}" target="_blank" rel="noopener">
         <span class="icon ${t.cls}">${escapeHtml(t.icon)}</span><span>${escapeHtml(text)}</span>
@@ -132,8 +154,8 @@
 
     const fileLines =
       buildGroupLine("要　項：", groups.guideline) +
-      buildGroupLine("参加申込：", groups.entry) +
-      buildGroupLine("組合せ等：", groups.draw) +
+      buildGroupLine("申込み：", groups.entry) +
+      buildGroupLine("組合せ：", groups.draw) +
       buildGroupLine("結　果：", groups.result);
 
     return `

@@ -873,3 +873,46 @@ section[id]{ scroll-margin-top: 14px; }
 #slideshow .slider-btn{
   z-index: 5;
 }
+
+html, body{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+.page-inner > *,
+.content > *,
+aside > *{
+  min-width: 0;
+}
+
+@media (max-width: 720px){
+  .mega{
+    overflow-x: hidden;
+  }
+
+  .mega-inner{
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 12px 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .mega-col,
+  .mega-info{
+    min-width: 0;
+    width: 100%;
+  }
+
+  .mega-col ul,
+  .mega-col ul.three{
+    grid-template-columns: 1fr;
+  }
+}

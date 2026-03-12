@@ -16,7 +16,8 @@
             { "key": "締　切：", "value": "令和8年3月14日(土）～4月17日(金）" }
           ],
           "files": [
-            { "label": "要項", "url": "parts/相模原オープン団体戦/令和８年度相模原オープン団体戦要項.pdf" }          ]
+            { "label": "要項", "type": "pdf", "url": "parts/相模原オープン団体戦/令和８年度相模原オープン団体戦要項.pdf" },
+            { "label": "申込", "type": "form", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd5JhUieKC6UAnVupXoSlkiWH7-vyjDIpZL_0rjk1Rw9HQ0hw/viewform?usp=header" }          ]
         }
       ]
     },
@@ -35,7 +36,7 @@
             { "key": "種　目：", "value": "A級, B級, C級, 壮年40の部, 壮年50の部, 壮年60の部" }
           ],
           "files": [
-            { "label": "結果", "url": "parts/相模原オープンダブルス/20251012.pdf" }          ]
+            { "label": "結果", "type": "pdf", "url": "parts/相模原オープンダブルス/20251012.pdf" }          ]
         },
         {
           "id": "y2025-002",
@@ -48,7 +49,7 @@
             { "key": "種　目：", "value": "A級, B級, C級, 壮年の部, 小学生の部" }
           ],
           "files": [
-            { "label": "結果", "url": "parts/相模原市民選手権シングルス/20250518.pdf" }          ]
+            { "label": "結果", "type": "pdf", "url": "parts/相模原市民選手権シングルス/20250518.pdf" }          ]
         },
         {
           "id": "y2025-001",
@@ -61,7 +62,7 @@
             { "key": "種　目：", "value": "A級, B級, C級, 壮年40の部, 壮年50の部" }
           ],
           "files": [
-            { "label": "結果：", "url": "parts/相模原オープン団体戦/20250406-3.pdf" }
+            { "label": "結果：", "type": "pdf", "url": "parts/相模原オープン団体戦/20250406-3.pdf" }
           ]
         },
         {
@@ -75,7 +76,7 @@
             { "key": "種　目：", "value": "A級, B級, C級, 壮年41以上の部, 壮年51以上の部, 壮年59以上の部" }
           ],
           "files": [
-            { "label": "結果", "url": "parts/年齢別ミックス/20251103.pdf" }          ]
+            { "label": "結果", "type": "pdf", "url": "parts/年齢別ミックス/20251103.pdf" }          ]
         },
         {
           "id": "y2025-005",
@@ -88,7 +89,7 @@
             { "key": "種　目：", "value": "各1~6年生男子、各1~6年生女子" }
           ],
           "files": [
-            { "label": "結果", "url": "parts/相模原オープン小学生/20251227.pdf" }          ]
+            { "label": "結果", "type": "pdf", "url": "parts/相模原オープン小学生/20251227.pdf" }          ]
         },
         {
           "id": "y2025-006",
@@ -101,7 +102,7 @@
             { "key": "種　目：", "value": "A級, B級, C級, 壮年の部, 小学生の部" }
           ],
           "files": [
-            { "label": "結果", "url": "parts/相模原市総合選手権大会シングルス/20260125.pdf" }          ]
+            { "label": "結果", "type": "pdf", "url": "parts/相模原市総合選手権大会シングルス/20260125.pdf" }          ]
         }
       ]
     }
