@@ -58,16 +58,16 @@
   }
 
   function buildDocLink(action){
-    const raw = (action?.label || "").trim();          // 例: "PDF 要項" / "X 参加申込"
-    const first = raw.split(/\s+/)[0];                // "PDF" or "X"
-    const rest = raw.replace(/^(\S+)\s*/, "");         // "要項" / "参加申込"
+    const type = String(action?.type || "").trim().toLowerCase();
+    const iconText =
+      type === "form" ? "FORM" :
+      (type === "excel" || type === "xls" || type === "xlsx") ? "X" :
+      "PDF";
 
-    const type = first.toLowerCase();                  // pdf / x / xlsx...
-    const iconText = first;                            // 表示文字（PDF/X）
     const iconCls =
-      type === "pdf" ? "pdf" :
-      (type === "xls" || type === "xlsx") ? "xls" :
-      type === "x" ? "x" : "pdf";
+      type === "form" ? "form" :
+      (type === "excel" || type === "xls" || type === "xlsx") ? "xls" :
+      "pdf";
 
     const a = document.createElement("a");
     a.className = "doc";
@@ -80,13 +80,13 @@
     icon.textContent = iconText;
 
     const text = document.createElement("span");
-    text.textContent = rest || raw;                    // 万一分割できない場合の保険
+    text.textContent = action?.label || "";
 
     a.appendChild(icon);
     a.appendChild(text);
     return a;
   }
-
+  
   function buildEntry(item){
     const updatedJP = formatJP(item.updated);
     const d = diffDaysFromToday(item.updated);

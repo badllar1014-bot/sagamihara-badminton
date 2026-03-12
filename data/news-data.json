@@ -9,37 +9,33 @@
       "updated": "2026-03-10",
       "lines": [
         {
-          "label": "開催日：",
-          "text": "令和8年4月29日(水）",
-          "actions": []
+          "label": "開催日：", "text": "令和8年4月29日(水）", "actions": []
         },
         {
-          "label": "主　管：",
-          "text": "相模原市バドミントン協会",
-          "actions": []
+          "label": "主　管：", "text": "相模原市バドミントン協会", "actions": []
         },
         {
-          "label": "会　場：",
-          "text": "ほねごりアリーナ（北総合体育館）",
-          "actions": []
+          "label": "会　場：", "text": "ほねごりアリーナ（北総合体育館）", "actions": []
         },
         {
-          "label": "種　目：",
-          "text": "A級, B級, C級, 壮年40の部, 壮年50の部",
-          "actions": []
+          "label": "種　目：", "text": "A級, B級, C級, 壮年40の部, 壮年50の部", "actions": []
         },
         {
-          "label": "締　切：",
-          "text": "令和8年3月14日(土）～4月17日(金）",
-          "actions": []
+          "label": "締　切：", "text": "令和8年3月14日(土）～4月17日(金）", "actions": []
         },
         {
           "label": "要　項：",
           "actions": [
             {
-              "label": "PDF 要項",
-              "url": "parts/相模原オープン団体戦/令和８年度相模原オープン団体戦要項.pdf",
-              "target": "_blank"
+              "type": "PDF", "label": "要項", "url": "parts/相模原オープン団体戦/令和８年度相模原オープン団体戦要項.pdf", "target": "_blank"
+            }
+          ]
+        },
+        {
+          "label": "申　込：",
+          "actions": [
+            {
+              "type": "FORM", "label": "申込みフォーム", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd5JhUieKC6UAnVupXoSlkiWH7-vyjDIpZL_0rjk1Rw9HQ0hw/viewform?usp=header", "target": "_blank"
             }
           ]
         }

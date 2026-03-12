@@ -17,7 +17,7 @@
           ],
           "files": [
             { "label": "要項", "type": "pdf", "url": "parts/相模原オープン団体戦/令和８年度相模原オープン団体戦要項.pdf" },
-            { "label": "申込", "type": "form", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd5JhUieKC6UAnVupXoSlkiWH7-vyjDIpZL_0rjk1Rw9HQ0hw/viewform?usp=header" }          ]
+            { "label": "申込みフォーム", "type": "form", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd5JhUieKC6UAnVupXoSlkiWH7-vyjDIpZL_0rjk1Rw9HQ0hw/viewform?usp=header" }          ]
         }
       ]
     },

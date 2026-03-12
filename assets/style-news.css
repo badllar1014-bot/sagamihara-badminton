@@ -854,8 +854,7 @@ aside.card.right-tab h3{
 /* もしExcel等があるなら緑 */
 .content .doc .icon.xls{ background: #0f8a3a; }
 
-/* 「X 参加申込」みたいな外部リンク系も同じ箱に入れる場合の例 */
-.content .doc .icon.x{ background: #111827; }
+.content .doc .icon.form{ background: #db25eb; font-size: 9.5px;}
 
 html, body{
   width: 100%;
