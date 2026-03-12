@@ -916,3 +916,12 @@ aside > *{
     grid-template-columns: 1fr;
   }
 }
+
+.home-doc-pdf.form{
+  background: #db25eb;
+  color: #fff;
+}
+.home-doc-pdf.xls{
+  background: #0f8a3a;
+  color: #fff;
+}

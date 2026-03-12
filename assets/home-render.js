@@ -67,6 +67,18 @@
       .trim() || "資料";
   }
 
+  function getDocTypeInfo(file) {
+    const type = String(file?.type || "").trim().toLowerCase();
+
+    if (type === "form") {
+      return { cls: "form", text: "FORM" };
+    }
+    if (type === "excel" || type === "xls" || type === "xlsx") {
+      return { cls: "xls", text: "X" };
+    }
+    return { cls: "pdf", text: "PDF" };
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const root = document.getElementById("homeTaikaiList");
     if (!root) return;
@@ -185,11 +197,27 @@
       const linkItems = [];
       if (files) {
         files.forEach(f => {
-          if (f?.url) linkItems.push({ label: shortLabel(f.label), url: f.url });
+          if (f?.url) {
+            const t = getDocTypeInfo(f);
+            linkItems.push({
+              label: shortLabel(f.label),
+              url: f.url,
+              typeClass: t.cls,
+              typeText: t.text
+            });
+          }
         });
       } else if (docs) {
         docs.forEach(d => {
-          if (d?.url) linkItems.push({ label: shortLabel(d.label), url: d.url });
+          if (d?.url) {
+            const t = getDocTypeInfo(d);
+            linkItems.push({
+              label: shortLabel(d.label),
+              url: d.url,
+              typeClass: t.cls,
+              typeText: t.text
+            });
+          }
         });
       }
 
@@ -206,15 +234,15 @@
         linkItems.forEach((d) => {
           // 1アイテム： 要項： [PDF(link)]
           const label = el("span", { class: "home-doc-label", text: `${d.label}：` }); // ← span
-          const pdf = el("a", {
-            class: "home-doc-pdf",
+          const docLink = el("a", {
+            class: `home-doc-pdf ${d.typeClass || "pdf"}`,
             href: d.url,
             target: "_blank",
             rel: "noopener",
-            text: "PDF"
+            text: d.typeText || "PDF"
           });
 
-          const item = el("span", { class: "home-doc-item" }, [label, pdf]);
+          const item = el("span", { class: "home-doc-item" }, [label, docLink]);
           docsRow.appendChild(item);
         });
 

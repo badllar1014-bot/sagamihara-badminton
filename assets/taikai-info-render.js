@@ -44,9 +44,14 @@
   // 拡張子などで PDF / X を判定
   function detectDocType(url, label){
     const u = String(url || "");
-    if (/\.(xlsx|xls)$/i.test(u)) return { cls: "xls", icon: "X" };
-    // ラベルにXが入ってるケースの保険
-    if (/^X\b|参加申込/i.test(String(label || "")) && /\.(xlsx|xls)/i.test(u)) {
+
+    if (/\.(xlsx|xls)(\?.*)?$/i.test(u)) {
+      return { cls: "xls", icon: "X" };
+    }
+    if (/\.(htm|html)(\?.*)?$/i.test(u)) {
+      return { cls: "web", icon: "WEB" };
+    }
+    if (/^X\b|参加申込/i.test(String(label || "")) && /\.(xlsx|xls)(\?.*)?$/i.test(u)) {
       return { cls: "xls", icon: "X" };
     }
     return { cls: "pdf", icon: "PDF" };

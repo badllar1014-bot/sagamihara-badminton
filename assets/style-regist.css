@@ -267,18 +267,18 @@ aside.card.right-tab h3{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 0 0 14px;
-  height: 30px;            /* ← 縦幅をここで固定 */
+  margin: 0 0 0px;
+  height: 32px;            /* ← 縦幅をここで固定 */
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(11,122,58,.06);
+  background: #fff;
   font-weight: 900;
   color: #0b3b86;
   text-decoration: none;
 }
 .doc-btn:hover{
-  background: rgba(11,122,58,.12);
+  background: #fff;
 }
 
 .flow-list{
@@ -326,7 +326,7 @@ aside.card.right-tab h3{
 }
 
 .schedule-actions{
-  margin: 10px 0 6px;
+  margin: 10px 0 4px;
 }
 
 /* =========================================================

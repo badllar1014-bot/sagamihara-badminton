@@ -669,6 +669,7 @@ aside.card.right-tab h3{
 
 .entry-lines .icon.pdf{ background: #d40000; } /* 赤 */
 .entry-lines .icon.xls{ background: #0f8a3a; } /* 緑 */
+.entry-lines .icon.web{ background: #2563eb; } /* 青 */
 
 /* スマホは縦積み */
 @media (max-width: 720px){
@@ -769,14 +770,14 @@ aside.card.right-tab h3{
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(11,122,58,.06);
+  background: #fff;
   font-weight: 900;
   color: #0b3b86;
   text-decoration: none;
 }
 
 .doc-btn:hover{
-  background: rgba(11,122,58,.12);
+  background: #fff;
 }
 
 html, body{

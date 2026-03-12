@@ -17,10 +17,10 @@
             { "key": "会  場：", "value": "県立スポーツセンターアリーナ２" }
           ],
           "files": [
-            { "label": "要項（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20250830yk.pdf" },
-            { "label": "組合せ（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20250830kum.pdf" },
-            { "label": "タイムテーブル（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20250830prg.pdf" },
-            { "label": "結果（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20250830/20250830index.htm" }
+            { "label": "要項", "url": "https://www.badminton-kk.org/pjplan/2025/20250830yk.pdf" },
+            { "label": "組合せ", "url": "https://www.badminton-kk.org/pjplan/2025/20250830kum.pdf" },
+            { "label": "タイムテーブル", "url": "https://www.badminton-kk.org/pjplan/2025/20250830prg.pdf" },
+            { "label": "結果", "url": "https://www.badminton-kk.org/pjplan/2025/20250830/20250830index.htm" }
           ]
         },
         {
@@ -34,10 +34,10 @@
             { "key": "会  場：", "value": "小田原アリーナ" }
           ],
           "files": [
-            { "label": "要項（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20260117yk.pdf" },
-            { "label": "組合せ（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20260117kum.pdf" },
-            { "label": "タイムテーブル（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20260117prg.pdf" },
-            { "label": "結果（PDF）", "url": "https://www.badminton-kk.org/pjplan/2025/20260117/20260117index.htm" }
+            { "label": "要項", "url": "https://www.badminton-kk.org/pjplan/2025/20260117yk.pdf" },
+            { "label": "組合せ", "url": "https://www.badminton-kk.org/pjplan/2025/20260117kum.pdf" },
+            { "label": "タイムテーブル", "url": "https://www.badminton-kk.org/pjplan/2025/20260117prg.pdf" },
+            { "label": "結果", "url": "https://www.badminton-kk.org/pjplan/2025/20260117/20260117index.htm" }
           ]
         }
       ]
