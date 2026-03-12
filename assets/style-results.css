@@ -328,7 +328,7 @@ aside.card.right-tab .links a{
 .entry-lines .line{
   display: grid;
   grid-template-columns: 120px .90fr;
-  gap: 0px;
+  gap: 10px;
   align-items: start;
 }
 .entry-lines .label{
@@ -350,15 +350,15 @@ aside.card.right-tab .links a{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0px 8px;
+  padding: 1px 8px;
   border: 1px solid var(--line);
-  border-radius: 6px;
-  background: rgba(11,122,58,.06);
+  border-radius: 10px;
+  background: #fff;
   text-decoration: none;
   font-weight: 900;
   color: #0b3b86;
 }
-.doc:hover{ background: rgba(11,122,58,.08); }
+.doc:hover{ background: #fff; }
 
 .icon{
   display: inline-flex;
